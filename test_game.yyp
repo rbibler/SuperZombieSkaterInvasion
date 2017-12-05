@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "261766ec-7f79-4613-b68d-698c532aaaae",
+            "Value": {
+                "id": "e5c6569a-e71c-4512-bf90-3528ee3a3688",
+                "resourcePath": "scripts\\InFloor\\InFloor.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3c922317-7979-4c23-976b-5fb72cf6ab38",
             "Value": {
                 "id": "61f65bcc-942a-4089-95fa-45a75ed3e86b",
@@ -87,11 +95,35 @@
             }
         },
         {
+            "Key": "5d389e03-3c42-4722-b1ea-d8e3745fc800",
+            "Value": {
+                "id": "627bd837-65b2-4672-bb5e-a1161f1bb81a",
+                "resourcePath": "objects\\oInit\\oInit.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "631dd65e-487b-485c-8890-c36fec81ddec",
             "Value": {
                 "id": "0cbbff65-be31-4c62-af6a-71528539ecf6",
                 "resourcePath": "views\\631dd65e-487b-485c-8890-c36fec81ddec.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "648b7ddb-f1aa-4139-9c34-8b912ba9852d",
+            "Value": {
+                "id": "3c4145ff-501e-415f-9aed-5e7678b83adb",
+                "resourcePath": "tilesets\\tCollision\\tCollision.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "67c87b50-f997-49e9-b736-cc697036e20d",
+            "Value": {
+                "id": "6211d0aa-c438-4c89-9a38-622453750fa4",
+                "resourcePath": "rooms\\init\\init.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -140,6 +172,14 @@
                 "id": "e5e2a7a5-dbd2-4ab2-b6d2-e4cc0b892713",
                 "resourcePath": "views\\9f34a0be-f009-47c4-9d90-1dce69f99786.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b24e0247-13f2-4f22-9b35-9c8753b79e2f",
+            "Value": {
+                "id": "e1e6c58d-6921-4a96-897c-b71557eb219e",
+                "resourcePath": "sprites\\sCollision\\sCollision.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -192,7 +232,7 @@
         }
     ],
     "script_order": [
-        
+        "261766ec-7f79-4613-b68d-698c532aaaae"
     ],
     "tutorial": ""
 }

@@ -3,8 +3,15 @@
 xMax = 6;
 xSpd = 0;
 xAccel = 0.2;
+x_fraction = 0;
 
-yMax = 16;
+yMax = 15;
 ySpd = 1;
-yAccel = 0.12;
+yAccel = 0.09;
 grounded = false;
+y_fraction = 0;
+
+jumpCount = 0;
+jumpKeyDown = 0;
+
+tilemap = layer_tilemap_get_id(layer_get_id("Collision"));
