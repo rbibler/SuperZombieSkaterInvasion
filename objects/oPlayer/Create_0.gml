@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-xMax = 6;
+normalXMax = 6;
+sprintXMax = 8;
 xSpd = 0;
 xAccel = 0.2;
 x_fraction = 0;

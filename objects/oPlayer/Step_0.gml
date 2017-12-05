@@ -6,6 +6,12 @@ var right = keyboard_check(vk_right);
 var xDir = right - left;
 var jumpPressed = keyboard_check(vk_space);
 var jumpReleased = keyboard_check_released(vk_space);
+var sprintPressed = keyboard_check(vk_shift);
+var xMax = normalXMax;
+if(sprintPressed) 
+{
+	xMax = sprintXMax;
+}
 
 grounded = InFloor(tilemap,x,bbox_bottom+1) >= 0;
 
@@ -88,3 +94,20 @@ if (floordist >= 0)
 }
 
 y += ySpd;
+
+if (grounded)
+{
+	y += abs(floordist) - 1;
+	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE - 1)
+	{
+		if (tilemap_get_at_pixel(tilemap,x,bbox_bottom + 1) > 1)
+		{
+			y += abs(InFloor(tilemap,x,bbox_bottom + 1)); 
+		}
+	}
+}
+
+if(y >= (room_height + sprite_height))
+{
+	game_restart();
+}
