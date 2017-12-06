@@ -15,16 +15,24 @@ if(sprintPressed)
 
 grounded = InFloor(tilemap,x,bbox_bottom+1) >= 0;
 
+
+
 if(jumpReleased) 
 {
+	if(ySpd < 0)
+	{
+		ySpd = 0;
+	}
 	jumpKeyDown = 0;
 }
 
 if(grounded && !jumpKeyDown && jumpPressed) {
 	grounded = false;
-	ySpd = -25;
+	ySpd = -18;
 	jumpKeyDown = 1;
 }
+
+
 
 ySpd += (yMax - ySpd) * yAccel;
 xSpd += ((xMax * xDir) - xSpd) * xAccel;

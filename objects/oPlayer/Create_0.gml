@@ -15,4 +15,7 @@ y_fraction = 0;
 jumpCount = 0;
 jumpKeyDown = 0;
 
+jumpSpeedMax = 25;
+
+
 tilemap = layer_tilemap_get_id(layer_get_id("Collision"));
