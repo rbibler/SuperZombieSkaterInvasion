@@ -51,14 +51,16 @@ ySpd -= y_fraction;
 // Check Horizontal Collisions
 var colEdge = xSpd >= 0 ? bbox_right : bbox_left;
 var tileIndexTop = tilemap_get_at_pixel(tilemap, colEdge + xSpd, bbox_top);
+//var tileIndexMiddle = tilemap_get_at_pixel(tilemap, colEdge + xSpd, y -  (bbox_bottom - bbox_top / 2));
 var tileIndexBottom = tilemap_get_at_pixel(tilemap, colEdge + xSpd, bbox_bottom);
 
 if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1)
 {
 	tileIndexBottom = 0;	// ignore bottom side if on a slope
+	//tileIndexMiddle = 0;
 }
 
-if(tileIndexTop == 1 || tileIndexBottom == 1)
+if(tileIndexTop == 1 || tileIndexBottom == 1) // || tileIndexMiddle == 1)
 {
 	if(xSpd >= 0) 
 	{
@@ -86,7 +88,7 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+ySpd) <= 1)
 			y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);
 		} else 
 		{
-			y = y - (y % TILE_SIZE) - (bbox_top - y);
+			//y = y - (y % TILE_SIZE) - (bbox_top - y);
 		}
 		ySpd = 0;
 	}
@@ -119,3 +121,12 @@ if(y >= (room_height + sprite_height))
 {
 	game_restart();
 }
+
+// Image rotation based on direction
+// Check direction
+image_xscale = sign(xSpd);
+if(image_xscale == 0) 
+{
+	image_xscale = lastDir;
+}
+lastDir = image_xscale;

@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "4179643c-9889-4a18-91df-8b1058c6f8ce",
+            "Value": {
+                "id": "0735fda1-6fef-4df1-9fa6-16e59d735ed0",
+                "resourcePath": "tilesets\\tls_sidewalk\\tls_sidewalk.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "4f33409e-8e18-4d67-9773-29d48d61b3c8",
             "Value": {
                 "id": "597fcac4-053e-4043-b54d-108ad14ae732",
@@ -151,11 +159,27 @@
             }
         },
         {
+            "Key": "79e0c04b-3734-4d29-8452-0cf58238d8de",
+            "Value": {
+                "id": "bf6c1966-56be-4452-976c-f4a1030c9435",
+                "resourcePath": "sprites\\sSkater\\sSkater.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7cbb65bf-49cb-4542-8f2f-5faf11a3f5fc",
             "Value": {
                 "id": "79cdc6cd-4d25-4647-b2d6-e7e5d2b8e8e4",
                 "resourcePath": "views\\7cbb65bf-49cb-4542-8f2f-5faf11a3f5fc.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8f14ac9b-f02e-434a-b7a8-7e6bd13fb655",
+            "Value": {
+                "id": "99215aa9-eee7-4dc7-b866-fcd69d7b0926",
+                "resourcePath": "sprites\\spr_sidewalk\\spr_sidewalk.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
