@@ -13,28 +13,58 @@ if(sprintPressed)
 	xMax = sprintXMax;
 }
 
+fallTimerMax = FALL_TIMER_MAX;
+
 grounded = InFloor(tilemap,x,bbox_bottom+1) >= 0;
 
-
-
-if(jumpReleased) 
-{
-	if(ySpd < 0)
+if(grounded) {
+	airState = GROUNDED;
+	jumpTimer = 0;
+	fallTimer = 0;
+	if(jumpPressed && jumpKeyDown == 0) 
 	{
-		ySpd = 0;
+		grounded = false;
+		jumpKeyDown = 1;
+		airState = JUMPING;
+		ySpd = jump_heights[jumpTimer++];
+		if(sprintPressed && abs(xSpd) > 0)
+		{
+			jumpTimerMax = JUMP_TIMER_FAST;
+		} else
+		{
+			jumpTimerMax = JUMP_TIMER_SLOW;
+		}
 	}
+} else {
+	if(jumpPressed && airState == JUMPING)
+	{
+		if(jumpTimer >= jumpTimerMax)
+		{
+			airState = FALLING;
+		
+		} else {
+			ySpd = jump_heights[jumpTimer++];
+		}
+	} else 
+	{
+		airState = FALLING;
+	}
+}
+
+if(airState == FALLING)
+{
+	ySpd = fall_values[fallTimer++];
+	if(fallTimer >= FALL_TIMER_MAX)
+	{
+		fallTimer = FALL_TIMER_MAX - 1;
+	}
+}
+
+if(jumpReleased)
+{
 	jumpKeyDown = 0;
 }
 
-if(grounded && !jumpKeyDown && jumpPressed) {
-	grounded = false;
-	ySpd = -18;
-	jumpKeyDown = 1;
-}
-
-
-
-ySpd += (yMax - ySpd) * yAccel;
 xSpd += ((xMax * xDir) - xSpd) * xAccel;
 
 xSpd += x_fraction;
@@ -51,16 +81,14 @@ ySpd -= y_fraction;
 // Check Horizontal Collisions
 var colEdge = xSpd >= 0 ? bbox_right : bbox_left;
 var tileIndexTop = tilemap_get_at_pixel(tilemap, colEdge + xSpd, bbox_top);
-//var tileIndexMiddle = tilemap_get_at_pixel(tilemap, colEdge + xSpd, y -  (bbox_bottom - bbox_top / 2));
 var tileIndexBottom = tilemap_get_at_pixel(tilemap, colEdge + xSpd, bbox_bottom);
 
 if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1)
 {
 	tileIndexBottom = 0;	// ignore bottom side if on a slope
-	//tileIndexMiddle = 0;
 }
 
-if(tileIndexTop == 1 || tileIndexBottom == 1) // || tileIndexMiddle == 1)
+if(tileIndexTop == 1 || tileIndexBottom == 1)
 {
 	if(xSpd >= 0) 
 	{
@@ -83,12 +111,14 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+ySpd) <= 1)
 
 	if(tileIndexRight == 1 || tileIndexLeft == 1)	
 	{
+		// Falling Down (good movie)
 		if(ySpd >= 0 ) 
 		{
 			y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);
 		} else 
 		{
-			//y = y - (y % TILE_SIZE) - (bbox_top - y);
+			airState = FALLING;
+			jumpTimer = jumpTimerMax;
 		}
 		ySpd = 0;
 	}
@@ -121,6 +151,17 @@ if(y >= (room_height + sprite_height))
 {
 	game_restart();
 }
+
+
+/*
+* Animation:
+* States are:
+* Idle
+* Skating
+* Jumping
+* Falling
+* Hit
+*/
 
 // Image rotation based on direction
 // Check direction
