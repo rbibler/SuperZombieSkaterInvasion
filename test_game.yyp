@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "15b121d9-bb7e-453f-acc8-3fc50330ee4d",
+            "Value": {
+                "id": "ecd4061b-9777-4e43-a673-499e606a9eca",
+                "resourcePath": "objects\\oBGManager\\oBGManager.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1b11aba9-a6a8-4f00-b153-49c529375180",
             "Value": {
                 "id": "24e35859-bc87-44b9-81e2-fa06c49198b8",
