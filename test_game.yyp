@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "1b11aba9-a6a8-4f00-b153-49c529375180",
+            "Value": {
+                "id": "24e35859-bc87-44b9-81e2-fa06c49198b8",
+                "resourcePath": "sprites\\sBGBeachLayer2Imgs\\sBGBeachLayer2Imgs.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1e0a4065-fac6-4b24-87fc-54ca29ed24d0",
             "Value": {
                 "id": "be0133a5-fede-4cc9-9ff9-13375b101404",
@@ -103,11 +111,27 @@
             }
         },
         {
+            "Key": "5b61bee1-7c59-4c10-8128-c141d3fe37d4",
+            "Value": {
+                "id": "9e2f3021-ed0d-4c30-be76-27c5b849834e",
+                "resourcePath": "views\\5b61bee1-7c59-4c10-8128-c141d3fe37d4.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "5d389e03-3c42-4722-b1ea-d8e3745fc800",
             "Value": {
                 "id": "627bd837-65b2-4672-bb5e-a1161f1bb81a",
                 "resourcePath": "objects\\oInit\\oInit.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "62e34f9e-96f1-447f-8627-af656fe31a87",
+            "Value": {
+                "id": "e417f0a8-eee1-44c9-9886-9ee52ebfdd66",
+                "resourcePath": "views\\62e34f9e-96f1-447f-8627-af656fe31a87.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -175,6 +199,14 @@
             }
         },
         {
+            "Key": "8d9771f9-9202-46b0-9e50-157fa515ed74",
+            "Value": {
+                "id": "bede2123-8165-4a53-9d99-0f4a7d8c0bce",
+                "resourcePath": "sprites\\sSkaterIdle\\sSkaterIdle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8f14ac9b-f02e-434a-b7a8-7e6bd13fb655",
             "Value": {
                 "id": "99215aa9-eee7-4dc7-b866-fcd69d7b0926",
@@ -207,6 +239,30 @@
             }
         },
         {
+            "Key": "b9dd31d7-9458-4f8f-b1a6-4c6ed1fb17db",
+            "Value": {
+                "id": "25a4488f-531d-4ba5-ae10-ee160f2c4f19",
+                "resourcePath": "sprites\\sSkaterFall\\sSkaterFall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c7568d1e-5ef3-455d-be45-4723c27a1a68",
+            "Value": {
+                "id": "eaff4f47-0281-4630-9c20-1137f27e94e9",
+                "resourcePath": "sprites\\sSkaterJump\\sSkaterJump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c80112bf-5a58-445e-b984-b7a6f2709a0a",
+            "Value": {
+                "id": "54b397d6-5f7a-4c3e-951e-da6acbb2840a",
+                "resourcePath": "views\\c80112bf-5a58-445e-b984-b7a6f2709a0a.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "c818f0ae-c1cd-4ef1-a7af-b7c9949d682a",
             "Value": {
                 "id": "1ec7c0ac-0005-4683-ac62-8268271f1f7b",
@@ -228,6 +284,38 @@
                 "id": "6148b40a-a8c4-4247-bed5-fea960ebb052",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "d1820e35-9c04-4eb5-9653-022b259764db",
+            "Value": {
+                "id": "7b4b95cf-5945-4c78-988f-fbbabed715d8",
+                "resourcePath": "sprites\\sBGBeachLayer4Img0\\sBGBeachLayer4Img0.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "da475a2e-c315-4249-9187-2fa7eeb98889",
+            "Value": {
+                "id": "22d3a746-0c04-4cb8-854e-661d87c6443c",
+                "resourcePath": "sprites\\sBGBeachLayer3Img0\\sBGBeachLayer3Img0.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dbf54935-0ead-4ca7-a088-828f92e03edd",
+            "Value": {
+                "id": "cb8896d3-4217-4ab2-a8fd-8095c85da475",
+                "resourcePath": "sprites\\sSkaterCrouch\\sSkaterCrouch.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f03624e7-9a0d-45ff-a8a2-6778aa3e1d8a",
+            "Value": {
+                "id": "788564ef-37b9-4c1b-9eff-877b766fdf5b",
+                "resourcePath": "sprites\\sBGBeachLayer1Img0\\sBGBeachLayer1Img0.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

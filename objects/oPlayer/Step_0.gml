@@ -3,6 +3,8 @@
 
 var left = keyboard_check(vk_left);
 var right = keyboard_check(vk_right);
+var down = keyboard_check(vk_down);
+var skateReleased = left && right == 0;
 var xDir = right - left;
 var jumpPressed = keyboard_check(vk_space);
 var jumpReleased = keyboard_check_released(vk_space);
@@ -162,6 +164,85 @@ if(y >= (room_height + sprite_height))
 * Falling
 * Hit
 */
+switch(animState) 
+{
+	case ANIM_IDLE:
+		if(airState == JUMPING) 
+		{
+			animState = ANIM_JUMP;
+			sprite_index = sSkaterJump;
+			image_index = 0;
+		} else if(left || right) 
+		{
+			animState = ANIM_SKATE;
+			sprite_index = sSkater;
+		} else if(down)
+		{
+			animState = ANIM_CROUCH;
+			sprite_index = sSkaterCrouch;
+		} else
+		{
+			sprite_index = sSkaterIdle;
+		}
+	break;
+	case ANIM_SKATE:
+		if(airState == JUMPING) 
+		{
+			animState = ANIM_JUMP;
+			sprite_index = sSkaterJump;
+			image_index = 0;
+		} else if(down)
+		{
+			animState = ANIM_CROUCH;
+			sprite_index = sSkaterCrouch;
+		} else if(left + right == 0)
+		{
+			animState = ANIM_IDLE;
+			sprite_index = sSkaterIdle;
+		}
+	break;
+	case ANIM_JUMP:
+		
+		if(grounded)
+		{
+			if(left || right) {
+				animState = ANIM_SKATE;
+				sprite_index = sSkater;
+			} else {
+				animState = ANIM_IDLE;
+				sprite_index = sSkaterIdle;
+			}
+		}
+	break;
+	case ANIM_CROUCH:
+		if(!down)
+		{
+			if(left || right) {
+				animState = ANIM_SKATE;
+				sprite_index = sSkater;
+			} else {
+				animState = ANIM_IDLE;
+				sprite_index = sSkaterIdle;
+			}
+		}
+	break;
+	case ANIM_BAIL:
+	break;
+	case ANIM_FALL:
+	break;
+	case ANIM_FLIP:
+	break;
+	case ANIM_SLAM:
+	break;
+}
+if(animState != lastAnimState)
+{
+	image_index = 0;
+}
+lastAnimState = animState;
+
+
+
 
 // Image rotation based on direction
 // Check direction
