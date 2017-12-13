@@ -212,12 +212,7 @@ switch(animState)
 		}
 	break;
 	case ANIM_JUMP:
-		if(airState == FALLING)
-		{
-			animState = ANIM_FALL;
-			sprite_index = sSkaterFall;
-			image_index = 0;
-		} else if(grounded)
+		if(grounded)
 		{
 			if(left || right) {
 				animState = ANIM_SKATE;
