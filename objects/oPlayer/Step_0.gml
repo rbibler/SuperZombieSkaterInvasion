@@ -172,6 +172,11 @@ switch(animState)
 			animState = ANIM_JUMP;
 			sprite_index = sSkaterJump;
 			image_index = 0;
+		} else if(airState == FALLING)
+		{
+			animState = ANIM_FALL;
+			sprite_index = sSkaterFall;
+			image_index = 0;
 		} else if(left || right) 
 		{
 			animState = ANIM_SKATE;
@@ -191,6 +196,11 @@ switch(animState)
 			animState = ANIM_JUMP;
 			sprite_index = sSkaterJump;
 			image_index = 0;
+		} else if(airState == FALLING)
+		{
+			animState = ANIM_FALL;
+			sprite_index = sSkaterFall;
+			image_index = 0;
 		} else if(down)
 		{
 			animState = ANIM_CROUCH;
@@ -202,8 +212,12 @@ switch(animState)
 		}
 	break;
 	case ANIM_JUMP:
-		
-		if(grounded)
+		if(airState == FALLING)
+		{
+			animState = ANIM_FALL;
+			sprite_index = sSkaterFall;
+			image_index = 0;
+		} else if(grounded)
 		{
 			if(left || right) {
 				animState = ANIM_SKATE;
@@ -215,7 +229,12 @@ switch(animState)
 		}
 	break;
 	case ANIM_CROUCH:
-		if(!down)
+		if(airState == FALLING)
+		{
+			animState = ANIM_FALL;
+			sprite_index = sSkaterFall;
+			image_index = 0;
+		} else if(!down)
 		{
 			if(left || right) {
 				animState = ANIM_SKATE;
@@ -229,6 +248,16 @@ switch(animState)
 	case ANIM_BAIL:
 	break;
 	case ANIM_FALL:
+		if(grounded)
+		{
+			if(left || right) {
+				animState = ANIM_SKATE;
+				sprite_index = sSkater;
+			} else {
+				animState = ANIM_IDLE;
+				sprite_index = sSkaterIdle;
+			}
+		}
 	break;
 	case ANIM_FLIP:
 	break;
