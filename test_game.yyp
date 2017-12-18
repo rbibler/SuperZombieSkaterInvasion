@@ -79,6 +79,22 @@
             }
         },
         {
+            "Key": "353bc3ff-a7c6-4e65-9eec-bbc7e27e02fe",
+            "Value": {
+                "id": "946cffa1-3862-4eb8-b3f9-5b76c02927c5",
+                "resourcePath": "sprites\\sGem\\sGem.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "37d6c2ad-5ee2-4afa-8a29-d0e213bd8563",
+            "Value": {
+                "id": "6fcd0278-4d08-4ba8-b97d-84dc693b4f41",
+                "resourcePath": "sprites\\sProjRock\\sProjRock.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3c922317-7979-4c23-976b-5fb72cf6ab38",
             "Value": {
                 "id": "61f65bcc-942a-4089-95fa-45a75ed3e86b",
@@ -92,6 +108,14 @@
                 "id": "d02c1827-94f8-4412-be3d-0f2e05b54ac5",
                 "resourcePath": "views\\3e92550c-4860-48b2-9890-4202a0c510ae.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3ea0b7d0-feb0-4830-b5e7-8c35dc52625e",
+            "Value": {
+                "id": "60d75fab-acbb-45e9-8355-f04158119a20",
+                "resourcePath": "tilesets\\tLadderCollision\\tLadderCollision.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -111,11 +135,27 @@
             }
         },
         {
+            "Key": "44caaf93-6c33-4d76-b9d4-ca01980603d5",
+            "Value": {
+                "id": "a15395ba-2ea8-460b-98d3-14dfe3a4e011",
+                "resourcePath": "sprites\\sSkaterSlingShotIdle\\sSkaterSlingShotIdle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4f33409e-8e18-4d67-9773-29d48d61b3c8",
             "Value": {
                 "id": "597fcac4-053e-4043-b54d-108ad14ae732",
                 "resourcePath": "views\\4f33409e-8e18-4d67-9773-29d48d61b3c8.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5011368c-d275-4713-8315-9279bce4c205",
+            "Value": {
+                "id": "2d86c740-5f9e-473b-a9f1-eaae3afacd84",
+                "resourcePath": "sprites\\sLadderCollisionTiles\\sLadderCollisionTiles.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -199,6 +239,14 @@
             }
         },
         {
+            "Key": "79a0e0dd-bd07-446e-8db1-999e497faf0f",
+            "Value": {
+                "id": "e0bc99e7-a0db-4513-b3ac-fa9b69721d30",
+                "resourcePath": "objects\\oGem\\oGem.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "79e0c04b-3734-4d29-8452-0cf58238d8de",
             "Value": {
                 "id": "bf6c1966-56be-4452-976c-f4a1030c9435",
@@ -228,6 +276,14 @@
                 "id": "99215aa9-eee7-4dc7-b866-fcd69d7b0926",
                 "resourcePath": "sprites\\spr_sidewalk\\spr_sidewalk.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9268b571-ad0b-4696-9ed3-4b44c3bcd0fb",
+            "Value": {
+                "id": "548feb17-cc03-4b5d-bbf5-cd53e364fb0d",
+                "resourcePath": "objects\\oProjRock\\oProjRock.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -332,6 +388,30 @@
                 "id": "788564ef-37b9-4c1b-9eff-877b766fdf5b",
                 "resourcePath": "sprites\\sBGBeachLayer1Img0\\sBGBeachLayer1Img0.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f0c41432-2250-4e6c-bcfd-b2eeb65de46f",
+            "Value": {
+                "id": "72d53952-ba0f-4d06-8fbe-08a786a54600",
+                "resourcePath": "sprites\\sSkaterSlingShot\\sSkaterSlingShot.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f16bfa6d-687f-4a50-8502-1145f5539d91",
+            "Value": {
+                "id": "8f76eb28-f0dc-4507-9463-75850c7e59db",
+                "resourcePath": "views\\f16bfa6d-687f-4a50-8502-1145f5539d91.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f24b389f-e7fa-48aa-be39-6c1fe0ea704e",
+            "Value": {
+                "id": "9ff0ff2d-0622-4a61-8ab0-2bebce5fa49c",
+                "resourcePath": "views\\f24b389f-e7fa-48aa-be39-6c1fe0ea704e.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

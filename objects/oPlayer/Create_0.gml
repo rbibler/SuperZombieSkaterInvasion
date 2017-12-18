@@ -1,18 +1,64 @@
 /// @description Insert description here
 // You can write your code in this editor
-// Animation states
-ANIM_IDLE = 0;
-ANIM_SKATE = 1;
-ANIM_CROUCH = 2;
-ANIM_JUMP = 3;
-ANIM_FALL = 4;
-ANIM_BAIL = 5;
-ANIM_FLIP = 6;
-ANIM_SLAM = 7;
+
+// States:
+
+#macro GROUNDED_MASK				0x02				// 0b000
+#macro WEAPON_DRAWN_MASK			0x04				// 0b010
+#macro JUMPING_MASK					0x08				// 0b001
+#macro	FALLING_MASK				0x10				// 0b101
+
+#macro	SKATE_IDLE					0x100				// Grounded
+#macro	SKATE_IDLE_GROUND			0x102
+#macro	SKATE_IDLE_WEAPON_DRAWN		0x106				// Weapon Drawn
+
+#macro	SKATE_SKATING				0x200				// Grounded
+#macro	SKATE_SKATING_GROUND		0x202
+#macro	SKATE_SKATING_WEAPON_DRAWN	0x206				// Weapon Drawn
+
+#macro	SKATE_CROUCH				0x300				// Grounded
+#macro	SKATE_CROUCH_GROUND			0x302
+#macro	SKATE_CROUCH_WEAPON_DRAWN	0x306				// Weapon Drawn
+
+#macro	SKATE_JUMPING				0x400				// Jumping
+#macro	SKATE_JUMPING_JUMP			0x408
+#macro	SKATE_JUMPING_WEAPON_DRAWN	0x40C				// Jumping + Weapon Drawn
+
+#macro	SKATE_FALLING				0x500				// Falling
+#macro	SKATE_FALLING_FALL			0x510
+#macro	SKATE_FALLING_WEAPON_DRAWN	0x514				// Falling + Weapon Drawn
+
+#macro	FOOT_IDLE					0x600				// Grounded
+#macro	FOOT_IDLE_GROUND			0x602
+#macro	FOOT_IDLE_WEAPON_DRAWN		0x604				// Grounded + Weapon Drawn
+
+#macro	FOOT_RUNNING				0x700				// Grounded
+#macro	FOOT_RUNNING_GROUND			0x702
+#macro	FOOT_RUNNING_WEAPON_DRAWN	0x704				// Grounded + Weapon Drawn
+
+#macro	FOOT_JUMPING				0x800				// Jumping
+#macro	FOOT_JUMPING_JUMP			0x808
+#macro	FOOT_JUMPING_WEAPON_DRAWN	0x80C				// Jumping + Weapon Drawn
+
+#macro	FOOT_FALLING				0x900				// Falling
+#macro	FOOT_FALLING_FALL			0x910
+#macro	FOOT_FALLING_WEAPON_DRAWN	0x914				// Falling + Weapon Drawn
+
+#macro	FOOT_CROUCH					0xA00				// Grounded
+#macro	FOOT_CROUCH_GROUND			0xA02
+#macro	FOOT_CROUCH_WEAPON_DRAWN	0xA04				// Grounded + Weapon Drawn
+
+#macro	CLIMBING				0xB00				// Grounded
+
+#macro	GLIDING						0xC00				// Jumping
+#macro	GLIDING_FALL				0xC10
+
+
 
 // state variables
-animState = 0;
-lastAnimState = -1;
+state = SKATE_IDLE;
+lastState = -1;
+canShoot = true;
 
 
 normalXMax = 3.5;
@@ -29,7 +75,11 @@ y_fraction = 0;
 jumpCount = 0;
 jumpKeyDown = 0;
 
+ladderClimbSpeed = 2;
+onLadder = false;
+
 tilemap = layer_tilemap_get_id(layer_get_id("Collision"));
+ladderTiles = layer_tilemap_get_id(layer_get_id("Ladder_Tiles"));
 
 lastDir = 1;
 
