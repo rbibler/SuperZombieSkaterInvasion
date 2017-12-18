@@ -103,7 +103,7 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1)
 	tileIndexBottom = 0;	// ignore bottom side if on a slope
 }
 
-if(tileIndexTop == 1 || tileIndexBottom == 1)
+if(tileIndexTop == 1 || tileIndexBottom == 1 && state != CLIMBING)
 {
 	if(xSpd >= 0) 
 	{
@@ -127,7 +127,7 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+ySpd) <= 1)
 	if(tileIndexRight == 1 || tileIndexLeft == 1)	
 	{
 		// Falling Down (good movie)
-		if(ySpd >= 0 ) 
+		if(ySpd >= 0 && state != CLIMBING) 
 		{
 			y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);
 		} else 
@@ -143,7 +143,7 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+ySpd) <= 1)
 }
 
 var floordist = InFloor(tilemap,x,bbox_bottom+ySpd);
-if (floordist >= 0)
+if (floordist >= 0 && state != CLIMBING)
 {
 	y += ySpd;
 	y -= (floordist + 1);
@@ -153,7 +153,7 @@ if (floordist >= 0)
 
 y += ySpd;
 
-if (grounded)
+if (grounded && state != CLIMBING)
 {
 	y += abs(floordist) - 1;
 	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE - 1)
@@ -195,6 +195,7 @@ if(upPressed)
 					x = (floor(bbox_right / TILE_SIZE) * TILE_SIZE) + (curBoxHalfWidth);
 				}
 				xSpd = 0;
+				ySpd = 0;
 				y -= ladderClimbSpeed;
 				state = CLIMBING;
 			}
@@ -208,15 +209,15 @@ if(downPressed)
 {
 	var ladderTileTopLeft = tilemap_get_at_pixel(ladderTiles,bbox_left,bbox_top);
 	var ladderTileTopRight = tilemap_get_at_pixel(ladderTiles,bbox_right,bbox_top);
-	var ladderTileBottomRight = tilemap_get_at_pixel(ladderTiles,bbox_right,bbox_bottom);
-	var ladderTileBottomLeft = tilemap_get_at_pixel(ladderTiles,bbox_left,bbox_bottom);
-	var ladderTileCenter = tilemap_get_at_pixel(ladderTiles,x,y);
+	var ladderTileBottomRight = tilemap_get_at_pixel(ladderTiles,bbox_right,bbox_bottom + 1);
+	var ladderTileBottomLeft = tilemap_get_at_pixel(ladderTiles,bbox_left,bbox_bottom + 1);
+	var ladderTileCenter = tilemap_get_at_pixel(ladderTiles,x,y + 1);
 	if(state == CLIMBING)
 	{
 		if(ladderTileBottomLeft == 2 || ladderTileCenter == 2 || ladderTileBottomRight == 2)
 		{
 			state = SKATE_IDLE;
-			y = (floor(bbox_bottom / TILE_SIZE) * TILE_SIZE) + (TILE_SIZE - 1);
+			y = (floor((bbox_bottom / TILE_SIZE) + 1) * TILE_SIZE) + (TILE_SIZE - 1);
 		} else {
 			y += ladderClimbSpeed;
 		}
@@ -236,6 +237,7 @@ if(downPressed)
 					x = (floor(x / TILE_SIZE) * TILE_SIZE) + (curBoxHalfWidth);
 				}
 				xSpd = 0;
+				ySpd = 0;
 				y += ladderClimbSpeed;
 				state = CLIMBING;
 			}
@@ -405,3 +407,5 @@ if(shootPressed)
 {
 	canShoot = true;
 }
+
+//printState(state);
