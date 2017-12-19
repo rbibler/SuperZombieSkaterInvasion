@@ -374,6 +374,18 @@ switch(state)
 			}
 		}
 	break;
+	case CLIMBING:
+		if(sprite_index != sSkaterClimb)
+		{
+			sprite_index = sSkaterClimb;
+		}
+		if(upPressed || downPressed)
+		{
+			image_speed = 1;
+		} else {
+			image_speed = 0;
+		}
+	break;
 }
 if(state != lastState)
 {
