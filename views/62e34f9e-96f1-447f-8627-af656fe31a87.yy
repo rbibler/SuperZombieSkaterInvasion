@@ -10,7 +10,8 @@
         "8d9771f9-9202-46b0-9e50-157fa515ed74",
         "dbf54935-0ead-4ca7-a088-828f92e03edd",
         "f0c41432-2250-4e6c-bcfd-b2eeb65de46f",
-        "44caaf93-6c33-4d76-b9d4-ca01980603d5"
+        "44caaf93-6c33-4d76-b9d4-ca01980603d5",
+        "40451e2f-1d01-42fe-8b01-0bbe9c6ade3e"
     ],
     "filterType": "GMSprite",
     "folderName": "sSkaterSprites",

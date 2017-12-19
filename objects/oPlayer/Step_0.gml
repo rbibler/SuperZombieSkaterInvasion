@@ -103,7 +103,7 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1)
 	tileIndexBottom = 0;	// ignore bottom side if on a slope
 }
 
-if(tileIndexTop == 1 || tileIndexBottom == 1 && state != CLIMBING)
+if((tileIndexTop == 1 || tileIndexBottom == 1) && state != CLIMBING)
 {
 	if(xSpd >= 0) 
 	{
@@ -112,6 +112,7 @@ if(tileIndexTop == 1 || tileIndexBottom == 1 && state != CLIMBING)
 	{
 		x = x - (x % TILE_SIZE) - (bbox_left - x);
 	}
+	show_debug_message("X COLLISION!");
 	xSpd = 0;
 }
 
@@ -209,15 +210,15 @@ if(downPressed)
 {
 	var ladderTileTopLeft = tilemap_get_at_pixel(ladderTiles,bbox_left,bbox_top);
 	var ladderTileTopRight = tilemap_get_at_pixel(ladderTiles,bbox_right,bbox_top);
-	var ladderTileBottomRight = tilemap_get_at_pixel(ladderTiles,bbox_right,bbox_bottom + 1);
-	var ladderTileBottomLeft = tilemap_get_at_pixel(ladderTiles,bbox_left,bbox_bottom + 1);
+	var ladderTileBottomRight = tilemap_get_at_pixel(ladderTiles,bbox_right,bbox_bottom + ladderClimbSpeed);
+	var ladderTileBottomLeft = tilemap_get_at_pixel(ladderTiles,bbox_left,bbox_bottom + ladderClimbSpeed);
 	var ladderTileCenter = tilemap_get_at_pixel(ladderTiles,x,y + 1);
 	if(state == CLIMBING)
 	{
 		if(ladderTileBottomLeft == 2 || ladderTileCenter == 2 || ladderTileBottomRight == 2)
 		{
 			state = SKATE_IDLE;
-			y = (floor((bbox_bottom / TILE_SIZE) + 1) * TILE_SIZE) + (TILE_SIZE - 1);
+			y = (floor((bbox_bottom + ladderClimbSpeed) / TILE_SIZE) * TILE_SIZE) + (TILE_SIZE - 1);
 		} else {
 			y += ladderClimbSpeed;
 		}
@@ -231,7 +232,7 @@ if(downPressed)
 			{
 				if(ladderTileBottomLeft == 1) {
 					x = (floor(bbox_left / TILE_SIZE) * TILE_SIZE) + (curBoxHalfWidth);
-				} else if(ladderBottomRight == 1) {
+				} else if(ladderTileBottomRight == 1) {
 					x = (floor(bbox_right / TILE_SIZE) * TILE_SIZE) + (curBoxHalfWidth);
 				} else {
 					x = (floor(x / TILE_SIZE) * TILE_SIZE) + (curBoxHalfWidth);
