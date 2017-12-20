@@ -41,6 +41,7 @@ if(grounded) {
 		}
 	}
 } else {
+	onPlatform = false;
 	if(state == SKATE_JUMPING)
 	{
 		if(jumpTimer >= jumpTimerMax || !jumpPressed)
@@ -143,6 +144,7 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+ySpd) <= 1)
 		if(ySpd >= 0 && state != CLIMBING) 
 		{
 			y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);
+			show_debug_message("Updating Y due to vert collision");
 		} else 
 		{
 			if(state != CLIMBING) 
@@ -160,23 +162,35 @@ if (floordist >= 0 && state != CLIMBING)
 {
 	y += ySpd;
 	y -= (floordist + 1);
+	show_debug_message("Updating Y due to tile collision");
 	ySpd = 0;
 	floordist = -1;
 }
 
+
 // Check for platform collision
-if (place_meeting(x, bbox_bottom + ySpd, oPlatform))
+if (place_meeting(x, bbox_bottom + ySpd, oPlatform) && bbox_bottom <= oPlatform.bbox_bottom)
 {
+	
 	y = oPlatform.bbox_top - 1;
+	show_debug_message("Updaeting y due to platform. New y: " + string(y));
 	ySpd = 0;
-	grounded = true;
+	onPlatform = true;
+	if(state == CLIMBING) {
+		upPressed = 0;
+		downPressed = 0;
+	}
+	state = SKATE_IDLE;
 }
 
-
+if(ySpd != 0) {
+	show_debug_message("Updating Y due to yspd");
+}
 y += ySpd;
 
-/*if (grounded && state != CLIMBING)
+if (grounded && state != CLIMBING && !onPlatform)
 {
+	show_debug_message("Updating y due to previously being grounded");
 	y += abs(floordist) - 1;
 	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE - 1)
 	{
@@ -185,7 +199,7 @@ y += ySpd;
 			y += abs(InFloor(tilemap,x,bbox_bottom + 1)); 
 		}
 	}
-}*/
+}
 
 
 
@@ -446,4 +460,4 @@ if(shootPressed)
 	canShoot = true;
 }
 
-//printState(state);
+printState(state);
