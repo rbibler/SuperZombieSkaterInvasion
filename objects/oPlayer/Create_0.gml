@@ -64,11 +64,13 @@ canShoot = true;
 normalXMax = 3.5;
 sprintXMax = 4.5;
 xSpd = 0;
+xSpdFromFriends = 0;
 xAccel = 0.2;
 x_fraction = 0;
 
 
 ySpd = 1;
+ySpdFromFriends = 0;
 grounded = false;
 y_fraction = 0;
 

@@ -21,7 +21,7 @@ if(sprintPressed)
 
 fallTimerMax = FALL_TIMER_MAX;
 
-grounded = InFloor(tilemap,x,bbox_bottom+1) >= 0;
+grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0)|| (place_meeting(x, bbox_bottom + 1, oPlatform));
 
 if(grounded) {
 	jumpTimer = 0;
@@ -90,13 +90,14 @@ xSpd -= x_fraction;
 y_fraction = ySpd - (floor(abs(ySpd)) * sign(ySpd));
 ySpd -= y_fraction;
 
-
+var xSpdFinal = xSpd + xSpdFromFriends;
+xSpdFromFriends = 0;
 
 
 // Check Horizontal Collisions
-var colEdge = xSpd >= 0 ? bbox_right : bbox_left;
-var tileIndexTop = tilemap_get_at_pixel(tilemap, colEdge + xSpd, bbox_top);
-var tileIndexBottom = tilemap_get_at_pixel(tilemap, colEdge + xSpd, bbox_bottom);
+var colEdge = xSpdFinal >= 0 ? bbox_right : bbox_left;
+var tileIndexTop = tilemap_get_at_pixel(tilemap, colEdge + xSpdFinal, bbox_top);
+var tileIndexBottom = tilemap_get_at_pixel(tilemap, colEdge + xSpdFinal, bbox_bottom);
 
 if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1)
 {
@@ -105,18 +106,29 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1)
 
 if((tileIndexTop == 1 || tileIndexBottom == 1) && state != CLIMBING)
 {
-	if(xSpd >= 0) 
+	if(xSpdFinal >= 0) 
 	{
 		x = x - (x % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_right - x);
 	} else
 	{
 		x = x - (x % TILE_SIZE) - (bbox_left - x);
 	}
-	show_debug_message("X COLLISION!");
+	xSpdFinal = 0;
 	xSpd = 0;
 }
 
-x += xSpd;
+// Check for platform collision
+if (place_meeting(bbox_right + xSpdFinal, bbox_bottom, oPlatform))
+{
+	while(!place_meeting(bbox_right + sign(xSpdFinal), bbox_bottom, oPlatform)) {
+		x = x + sign(xSpdFinal);
+	}
+	show_debug_message("X COLLISION!");
+	xSpd = 0;
+	xSpdFinal = 0;
+}
+
+x += xSpdFinal;
 
 // Check vertical collisions
 if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+ySpd) <= 1)
@@ -152,9 +164,18 @@ if (floordist >= 0 && state != CLIMBING)
 	floordist = -1;
 }
 
+// Check for platform collision
+if (place_meeting(x, bbox_bottom + ySpd, oPlatform))
+{
+	y = oPlatform.bbox_top - 1;
+	ySpd = 0;
+	grounded = true;
+}
+
+
 y += ySpd;
 
-if (grounded && state != CLIMBING)
+/*if (grounded && state != CLIMBING)
 {
 	y += abs(floordist) - 1;
 	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE - 1)
@@ -164,7 +185,9 @@ if (grounded && state != CLIMBING)
 			y += abs(InFloor(tilemap,x,bbox_bottom + 1)); 
 		}
 	}
-}
+}*/
+
+
 
 // Check for ladder collisions
 if(upPressed)
@@ -196,6 +219,7 @@ if(upPressed)
 					x = (floor(bbox_right / TILE_SIZE) * TILE_SIZE) + (curBoxHalfWidth);
 				}
 				xSpd = 0;
+				xSpdFinal = 0;
 				ySpd = 0;
 				y -= ladderClimbSpeed;
 				state = CLIMBING;
@@ -238,6 +262,7 @@ if(downPressed)
 					x = (floor(x / TILE_SIZE) * TILE_SIZE) + (curBoxHalfWidth);
 				}
 				xSpd = 0;
+				xSpdFinal = 0;
 				ySpd = 0;
 				y += ladderClimbSpeed;
 				state = CLIMBING;

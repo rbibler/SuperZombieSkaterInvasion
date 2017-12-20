@@ -3,12 +3,18 @@
 
 x += tileSpeed;
 
-if(x >= 600) {
+if(x >= xMax) {
 	tileSpeed *= -1;
 }
-if(x <= 350) {
+if(x <= xMin) {
 	tileSpeed *= -1;
 }
 
-tilemap_set_at_pixel(colTiles,1,x,y);
-tilemap_set_at_pixel(imageTiles,5,x,y);
+
+if(instance_exists(oPlayer))
+{
+	if(place_meeting(x, y - 1, oPlayer))
+	{
+		oPlayer.xSpdFromFriends = tileSpeed;
+	}
+}
