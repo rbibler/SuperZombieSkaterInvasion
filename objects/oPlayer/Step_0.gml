@@ -22,9 +22,9 @@ if(sprintPressed)
 
 fallTimerMax = FALL_TIMER_MAX;
 
-grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0) || (place_meeting(x, bbox_bottom + 1, oPlatform));
+grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0);// || (place_meeting(x, bbox_bottom + 1, oPlatform));
 
-if(grounded) {
+if(grounded || onPlatform) {
 	jumpTimer = 0;
 	fallTimer = 0;
 	if(jumpPressed && jumpKeyDown == 0) 
@@ -147,6 +147,35 @@ if(edgeToCheck == bbox_right)
 }*/
 
 
+// Check vertical collision with Platform
+var xOffset = xSpd;
+if(xSpd == 0)
+{
+	xOffset = 2 * lastDir;
+}
+if(place_meeting(x + xOffset, y + ySpd, oPlatform))
+{
+	// if player is stationary or moving right and platform is moving left
+	if(xSpd >= 0 && oPlatform.tileSpeed <= 0) 
+	{
+		if(bbox_right + xOffset >= oPlatform.bbox_left && bbox_right + xOffset <= oPlatform.bbox_right)
+		{
+			x = oPlatform.bbox_left - 1 - (bbox_right - x);
+			xSpd = 0;
+			xSpdFinal = 0;
+		}
+	} else if(xSpd < 0 && oPlatform.tileSpeed > 0){
+		if(bbox_left + xOffset <= oPlatform.bbox_right && bbox_left + xOffset >= oPlatform.bbox_right) 
+		{
+			x = oPlatform.bbox_right + 1 + (bbox_left - x);
+			xSpd = 0;
+			xSpdFinal = 0;
+			
+		}
+	}
+}
+
+
 x += xSpdFinal;
 
 // Check vertical collisions
@@ -208,9 +237,36 @@ if(edgeToCheck == bbox_bottom)
 	}
 }*/
 
-if(place_meeting(x + xSpd, y + ySpd, oPlatform))
+onPlatform = false;
+
+// Check vertical collision with Platform
+var yOffset = ySpd;
+if(ySpd == 0)
 {
-	image_blend = c_blue;
+	yOffset = 2;
+}
+if(place_meeting(x + xSpd, y + yOffset, oPlatform))
+{
+	if(ySpd >= 0)
+	{
+		if(y + yOffset >= oPlatform.bbox_top && y + yOffset <= oPlatform.bbox_bottom)
+		{
+			y = oPlatform.bbox_top - 1;
+			ySpd = 0;
+			onPlatform = true;
+			state = SKATE_IDLE;
+			platformObject = oPlatform;
+		}
+	} else {
+		if(bbox_top + yOffset <= oPlatform.bbox_bottom && bbox_top + yOffset >= oPlatform.bbox_top) 
+		{
+			//y = oPlatform.bbox_bottom + 1 + (bbox_top - y);
+			ySpd = 0;
+			state = SKATE_FALLING;
+			jumpTimer = jumpTimerMax;
+			
+		}
+	}
 }
 
 y += ySpd;
