@@ -9,12 +9,3 @@ if(x >= xMax) {
 if(x <= xMin) {
 	tileSpeed *= -1;
 }
-
-
-if(instance_exists(oPlayer))
-{
-	if(place_meeting(x, y - 1, oPlayer) && oPlayer.bbox_bottom <= bbox_bottom)
-	{
-		oPlayer.xSpdFromFriends = tileSpeed;
-	}
-}

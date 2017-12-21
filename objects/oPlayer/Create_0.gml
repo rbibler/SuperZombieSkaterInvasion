@@ -149,6 +149,7 @@ fall_values[27] = 5.125;
 
 airState = GROUNDED;
 onPlatform = false;
+platformObject = pointer_null;
 
 #macro	GROUNDED	0
 #macro	JUMPING		1

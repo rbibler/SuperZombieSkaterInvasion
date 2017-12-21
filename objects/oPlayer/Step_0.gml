@@ -14,6 +14,7 @@ var shootReleased = keyboard_check_released(vk_control);
 var upPressed = keyboard_check(vk_up);
 var xMax = normalXMax;
 var curBoxHalfWidth = (bbox_right - bbox_left) / 2;
+image_blend = -1;
 if(sprintPressed) 
 {
 	xMax = sprintXMax;
@@ -21,7 +22,7 @@ if(sprintPressed)
 
 fallTimerMax = FALL_TIMER_MAX;
 
-grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0)|| (place_meeting(x, bbox_bottom + 1, oPlatform));
+grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0) || (place_meeting(x, bbox_bottom + 1, oPlatform));
 
 if(grounded) {
 	jumpTimer = 0;
@@ -119,15 +120,32 @@ if((tileIndexTop == 1 || tileIndexBottom == 1) && state != CLIMBING)
 }
 
 // Check for platform collision
-if (place_meeting(bbox_right + xSpdFinal, bbox_bottom, oPlatform))
+/*var edgeToCheck = (x <= oPlatform.x) ? bbox_right : bbox_left;
+var posToCheck = edgeToCheck + xSpdFinal;
+
+if(edgeToCheck == bbox_right)
 {
-	while(!place_meeting(bbox_right + sign(xSpdFinal), bbox_bottom, oPlatform)) {
-		x = x + sign(xSpdFinal);
+	if(posToCheck > oPlatform.bbox_left && posToCheck <= oPlatform.bbox_right)
+	{
+		if(bbox_bottom > oPlatform.bbox_top && bbox_top < oPlatform.bbox_bottom)
+		{
+			x = oPlatform.bbox_left - (posToCheck - x);
+			xSpd = 0;
+			xSpdFinal = 0;
+		}
 	}
-	show_debug_message("X COLLISION!");
-	xSpd = 0;
-	xSpdFinal = 0;
-}
+} else {
+	if(posToCheck < oPlatform.bbox_right && posToCheck >= oPlatform.bbox_left)
+	{
+		if(bbox_bottom > oPlatform.bbox_top && bbox_top < oPlatform.bbox_bottom)
+		{
+			x = oPlatform.bbox_right + (x - posToCheck);
+			xSpd = 0;
+			xSpdFinal = 0;
+		}
+	}
+}*/
+
 
 x += xSpdFinal;
 
@@ -144,7 +162,6 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+ySpd) <= 1)
 		if(ySpd >= 0 && state != CLIMBING) 
 		{
 			y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);
-			show_debug_message("Updating Y due to vert collision");
 		} else 
 		{
 			if(state != CLIMBING) 
@@ -162,35 +179,44 @@ if (floordist >= 0 && state != CLIMBING)
 {
 	y += ySpd;
 	y -= (floordist + 1);
-	show_debug_message("Updating Y due to tile collision");
 	ySpd = 0;
 	floordist = -1;
 }
 
 
 // Check for platform collision
-if (place_meeting(x, bbox_bottom + ySpd, oPlatform) && bbox_bottom <= oPlatform.bbox_bottom)
+
+/*edgeToCheck = y <= oPlatform.bbox_top ? bbox_bottom : bbox_top;
+posToCheck = edgeToCheck + ySpd;
+if(edgeToCheck == bbox_bottom)
 {
-	
-	y = oPlatform.bbox_top - 1;
-	show_debug_message("Updaeting y due to platform. New y: " + string(y));
-	ySpd = 0;
-	onPlatform = true;
-	if(state == CLIMBING) {
-		upPressed = 0;
-		downPressed = 0;
+	if(posToCheck >= oPlatform.bbox_top && posToCheck <= oPlatform.bbox_bottom)
+	{
+		if(x >= oPlatform.bbox_left && x <= oPlatform.bbox_right)
+		{
+			y = oPlatform.bbox_top - 1;
+			ySpd = 0;
+			onPlatform = true;
+			if(state == CLIMBING)
+			{
+				upPressed = 0;
+				downPressed = 0;
+			}
+			state = SKATE_IDLE;
+			platformObject = oPlatform;
+		}
 	}
-	state = SKATE_IDLE;
+}*/
+
+if(place_meeting(x + xSpd, y + ySpd, oPlatform))
+{
+	image_blend = c_blue;
 }
 
-if(ySpd != 0) {
-	show_debug_message("Updating Y due to yspd");
-}
 y += ySpd;
 
 if (grounded && state != CLIMBING && !onPlatform)
 {
-	show_debug_message("Updating y due to previously being grounded");
 	y += abs(floordist) - 1;
 	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE - 1)
 	{
@@ -283,6 +309,11 @@ if(downPressed)
 			}
 		} 
 	}
+}
+
+if(onPlatform)
+{
+	x += platformObject.tileSpeed;
 }
 
 if(y >= (room_height + sprite_height))
@@ -459,5 +490,3 @@ if(shootPressed)
 {
 	canShoot = true;
 }
-
-printState(state);
