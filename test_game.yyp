@@ -335,14 +335,6 @@
             }
         },
         {
-            "Key": "a03f9dba-83f6-480a-be85-cce08b945aca",
-            "Value": {
-                "id": "8e938c21-d5c8-40fb-bdd8-dbfbdd54251e",
-                "resourcePath": "objects\\oPlatform2\\oPlatform2.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "b24e0247-13f2-4f22-9b35-9c8753b79e2f",
             "Value": {
                 "id": "e1e6c58d-6921-4a96-897c-b71557eb219e",

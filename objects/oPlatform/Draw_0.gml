@@ -1,9 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-image_xscale = width;
-image_yscale = height;
+
+width = image_xscale;
+height = image_yscale;
 for(var i = 0; i < width; i++)
 {
-	draw_tile(imageTiles, 5, 0, x + (i * TILE_SIZE), y);
+	for(var j = 0; j < height; j++)
+	{
+		draw_tile(imageTiles, 5, 0, x + (i * TILE_SIZE), y + (j * TILE_SIZE));
+	}
 }
-//draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, c_aqua);

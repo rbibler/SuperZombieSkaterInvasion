@@ -119,58 +119,63 @@ if((tileIndexTop == 1 || tileIndexBottom == 1) && state != CLIMBING)
 	xSpd = 0;
 }
 
-// Check for platform collision
-/*var edgeToCheck = (x <= oPlatform.x) ? bbox_right : bbox_left;
-var posToCheck = edgeToCheck + xSpdFinal;
 
-if(edgeToCheck == bbox_right)
-{
-	if(posToCheck > oPlatform.bbox_left && posToCheck <= oPlatform.bbox_right)
-	{
-		if(bbox_bottom > oPlatform.bbox_top && bbox_top < oPlatform.bbox_bottom)
-		{
-			x = oPlatform.bbox_left - (posToCheck - x);
-			xSpd = 0;
-			xSpdFinal = 0;
-		}
-	}
-} else {
-	if(posToCheck < oPlatform.bbox_right && posToCheck >= oPlatform.bbox_left)
-	{
-		if(bbox_bottom > oPlatform.bbox_top && bbox_top < oPlatform.bbox_bottom)
-		{
-			x = oPlatform.bbox_right + (x - posToCheck);
-			xSpd = 0;
-			xSpdFinal = 0;
-		}
-	}
-}*/
-
-
-// Check vertical collision with Platform
+var platform;
+var i;
 var xOffset = xSpd;
-if(xSpd == 0)
+var platformHalfWidth = 0;
+for(i = 0; i < instance_number(oPlatform); i++) 
 {
-	xOffset = 2 * lastDir;
-}
-if(place_meeting(x + xOffset, y + ySpd, oPlatform))
-{
-	// if player is stationary or moving right and platform is moving left
-	if(xSpd >= 0 && oPlatform.tileSpeed <= 0) 
+
+	platform = instance_find(oPlatform, i);
+	// Check horizontal collision with Platform
+	platformHalfWidth = (platform.bbox_right - platform.bbox_left) / 2;
+	if(place_meeting(x + xOffset, y + ySpd, platform))
 	{
-		if(bbox_right + xOffset >= oPlatform.bbox_left && bbox_right + xOffset <= oPlatform.bbox_right)
+		// if player is stationary or moving right and platform is moving left
+		if(x <= platform.x + platformHalfWidth) 
 		{
-			x = oPlatform.bbox_left - 1 - (bbox_right - x);
-			xSpd = 0;
-			xSpdFinal = 0;
-		}
-	} else if(xSpd < 0 && oPlatform.tileSpeed > 0){
-		if(bbox_left + xOffset <= oPlatform.bbox_right && bbox_left + xOffset >= oPlatform.bbox_right) 
+			if(bbox_right + xOffset >= platform.bbox_left && bbox_right + xOffset <= platform.bbox_right
+				&& bbox_left + xOffset < platform.bbox_left)
+			{
+				// Falling down
+				//if(ySpd >= 0)
+				//{			
+					//if(y + ySpd >= platform.bbox_top)
+					//{
+						x = platform.bbox_left - 1 - (bbox_right - x);
+						xSpd = 0;
+						xSpdFinal = 0;
+					//}
+				//} else {
+					// jumping up
+					//if(y + ySpd <= platform.bbox_bottom)
+					//{
+						//x = platform.bbox_left - 1 - (bbox_right - x);
+						//xSpd = 0;
+						//xSpdFinal = 0;
+					//}
+				//}
+			}
+		} else 
 		{
-			x = oPlatform.bbox_right + 1 + (bbox_left - x);
-			xSpd = 0;
-			xSpdFinal = 0;
-			
+			if(bbox_left + xOffset <= platform.bbox_right && bbox_left + xOffset >= platform.bbox_left
+				&& bbox_right > platform.bbox_right)
+			{
+				if(ySpd >= 0)
+				{			
+					if(y + ySpd >= platform.bbox_bottom)
+					{
+						x = platform.bbox_right + 1 + (x - bbox_left);
+						xSpd = 0;
+						xSpdFinal = 0;
+					}
+				} else {
+					x = platform.bbox_right + 1 + (x - bbox_left);
+					xSpd = 0;
+					xSpdFinal = 0;
+				}
+			}
 		}
 	}
 }
@@ -212,32 +217,9 @@ if (floordist >= 0 && state != CLIMBING)
 	floordist = -1;
 }
 
-
-// Check for platform collision
-
-/*edgeToCheck = y <= oPlatform.bbox_top ? bbox_bottom : bbox_top;
-posToCheck = edgeToCheck + ySpd;
-if(edgeToCheck == bbox_bottom)
-{
-	if(posToCheck >= oPlatform.bbox_top && posToCheck <= oPlatform.bbox_bottom)
-	{
-		if(x >= oPlatform.bbox_left && x <= oPlatform.bbox_right)
-		{
-			y = oPlatform.bbox_top - 1;
-			ySpd = 0;
-			onPlatform = true;
-			if(state == CLIMBING)
-			{
-				upPressed = 0;
-				downPressed = 0;
-			}
-			state = SKATE_IDLE;
-			platformObject = oPlatform;
-		}
-	}
-}*/
-
 onPlatform = false;
+
+
 
 // Check vertical collision with Platform
 var yOffset = ySpd;
@@ -245,26 +227,31 @@ if(ySpd == 0)
 {
 	yOffset = 2;
 }
-if(place_meeting(x + xSpd, y + yOffset, oPlatform))
+
+for(i = 0; i < instance_number(oPlatform); i++)
 {
-	if(ySpd >= 0)
+	platform = instance_find(oPlatform, i);
+	if(place_meeting(x + xSpd, y + yOffset, platform))
 	{
-		if(y + yOffset >= oPlatform.bbox_top && y + yOffset <= oPlatform.bbox_bottom)
+		if(ySpd >= 0)
 		{
-			y = oPlatform.bbox_top - 1;
-			ySpd = 0;
-			onPlatform = true;
-			state = SKATE_IDLE;
-			platformObject = oPlatform;
-		}
-	} else {
-		if(bbox_top + yOffset <= oPlatform.bbox_bottom && bbox_top + yOffset >= oPlatform.bbox_top) 
-		{
-			//y = oPlatform.bbox_bottom + 1 + (bbox_top - y);
-			ySpd = 0;
-			state = SKATE_FALLING;
-			jumpTimer = jumpTimerMax;
-			
+			if(y + yOffset >= platform.bbox_top && y + yOffset <= platform.bbox_bottom && bbox_top + yOffset <= platform.bbox_top)
+			{
+				y = platform.bbox_top - 1;
+				ySpd = 0;
+				onPlatform = true;
+				state = SKATE_IDLE;
+				platformObject = platform;
+			}
+		} else {
+			if(bbox_top + yOffset <= platform.bbox_bottom && bbox_top + yOffset >= platform.bbox_top && y + yOffset >= platform.bbox_bottom) 
+			{
+				//y = oPlatform.bbox_bottom + 1 + (bbox_top - y);
+				ySpd = 0;
+				state = SKATE_FALLING;
+				jumpTimer = jumpTimerMax;
+				
+			}
 		}
 	}
 }
@@ -369,7 +356,8 @@ if(downPressed)
 
 if(onPlatform)
 {
-	x += platformObject.tileSpeed;
+	x += platformObject.tileSpeedX;
+	y += platformObject.tileSpeedY;
 }
 
 if(y >= (room_height + sprite_height))
