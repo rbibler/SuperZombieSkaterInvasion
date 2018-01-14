@@ -1,20 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var left = keyboard_check(vk_left);
-var right = keyboard_check(vk_right);
-var downPressed = keyboard_check(vk_down);
-var skateReleased = left && right == 0;
+var left = 0;
+var right = 0;;
 var xDir = right - left;
-var jumpPressed = keyboard_check(vk_space);
-var jumpReleased = keyboard_check_released(vk_space);
-var sprintPressed = keyboard_check(vk_shift);
-var shootPressed = keyboard_check(vk_control);
-var shootReleased = keyboard_check_released(vk_control);
-var upPressed = keyboard_check(vk_up);
+var jumpPressed = 0;
+var jumpReleased = 0;
+var sprintPressed = 0;
+var shootPressed = 0;
+var shootReleased = 0;
 var xMax = normalXMax;
 var curBoxHalfWidth = (bbox_right - bbox_left) / 2;
+
 image_blend = -1;
+
 if(sprintPressed) 
 {
 	xMax = sprintXMax;

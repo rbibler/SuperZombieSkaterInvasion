@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "0d3eb7ae-2c0c-413f-bd52-3a1e23c90e8e",
+            "Value": {
+                "id": "9b950cb1-8030-4518-9094-b9a3805c2ac3",
+                "resourcePath": "objects\\oBadGuy\\oBadGuy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "11763274-801e-4add-8401-bacb682410cb",
             "Value": {
                 "id": "57531ce3-d381-4cf6-afbd-7b2b1af5d03f",
@@ -180,6 +188,14 @@
                 "id": "2d86c740-5f9e-473b-a9f1-eaae3afacd84",
                 "resourcePath": "sprites\\sLadderCollisionTiles\\sLadderCollisionTiles.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "512d8ef1-19a8-425e-9f10-9a15325e97b4",
+            "Value": {
+                "id": "34f3ea25-cc8e-4cbe-a85e-4d9805686954",
+                "resourcePath": "objects\\oCharacter\\oCharacter.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -347,6 +363,14 @@
             "Value": {
                 "id": "25a4488f-531d-4ba5-ae10-ee160f2c4f19",
                 "resourcePath": "sprites\\sSkaterFall\\sSkaterFall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c0fea08a-66e2-41e1-ae5c-ed701f6c610e",
+            "Value": {
+                "id": "a34c021c-8d8b-44a5-9f50-21011fcaaff6",
+                "resourcePath": "sprites\\sBadGuy\\sBadGuy.yy",
                 "resourceType": "GMSprite"
             }
         },
