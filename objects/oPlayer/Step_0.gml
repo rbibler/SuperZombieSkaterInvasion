@@ -7,7 +7,6 @@ var downPressed = keyboard_check(vk_down);
 var skateReleased = left && right == 0;
 var xDir = right - left;
 var jumpPressed = keyboard_check(vk_space);
-var jumpReleased = keyboard_check_released(vk_space);
 var sprintPressed = keyboard_check(vk_shift);
 var shootPressed = keyboard_check(vk_control);
 var shootReleased = keyboard_check_released(vk_control);
@@ -23,169 +22,24 @@ if(sprintPressed)
 fallTimerMax = FALL_TIMER_MAX;
 
 // check if on ground
-grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0);
+PlayerCheckGrounded();
 
-// Check for vertical impetus (i.e. jumping)
-if(grounded || onPlatform) {
-	jumpTimer = 0;
-	fallTimer = 0;
-	if(jumpPressed && jumpKeyDown == 0) 
-	{
-		grounded = false;
-		jumpKeyDown = 1;
-		state = SKATE_JUMPING;
-		ySpd = jump_heights[jumpTimer++];
-		if(sprintPressed && abs(xSpd) > 0)
-		{
-			jumpTimerMax = JUMP_TIMER_FAST;
-		} else
-		{
-			jumpTimerMax = JUMP_TIMER_SLOW;
-		}
-	}
-} else {
-	onPlatform = false;
-	if(state == SKATE_JUMPING)
-	{
-		if(jumpTimer >= jumpTimerMax || !jumpPressed)
-		{
-			jumpTimer = jumpTimerMax;
-			ySpd = fall_values[fallTimer++];
-			if(fallTimer >= FALL_TIMER_MAX)
-			{
-				fallTimer = FALL_TIMER_MAX - 1;
-			}
-		
-		} else if(jumpPressed) 
-		{
-			ySpd = jump_heights[jumpTimer++];
-		}
-	} else if(state != CLIMBING)
-	{
-		state = SKATE_FALLING;
-	}
-}
-
-if(state == SKATE_FALLING)
-{
-	ySpd = fall_values[fallTimer++];
-	if(fallTimer >= FALL_TIMER_MAX)
-	{
-		fallTimer = FALL_TIMER_MAX - 1;
-	}
-}
-
-if(jumpReleased)
-{
-	jumpKeyDown = 0;
-}
+PlayerCheckVertImpulse(jumpPressed, sprintPressed);
 
 // Check for horizontal impetus
-xSpd += ((xMax * xDir) - xSpd) * xAccel;
-if(state == CLIMBING)
-{
-	xSpd = 0;
-}
+PlayerCheckHorizImpulse(xMax, xDir);
 
 // Update fractions from last step
-xSpd += x_fraction;
-ySpd += y_fraction;
-
-x_fraction = xSpd - (floor(abs(xSpd)) * sign(xSpd));
-xSpd -= x_fraction;
-y_fraction = ySpd - (floor(abs(ySpd)) * sign(ySpd));
-ySpd -= y_fraction;
-
-var xSpdFinal = xSpd + xSpdFromFriends;
-xSpdFromFriends = 0;
-
+PlayerAddFraction();
 
 // Check Horizontal Collisions
-var colEdge = xSpdFinal >= 0 ? bbox_right : bbox_left;
-var tileIndexTop = tilemap_get_at_pixel(tilemap, colEdge + xSpdFinal, bbox_top);
-var tileIndexBottom = tilemap_get_at_pixel(tilemap, colEdge + xSpdFinal, bbox_bottom);
+PlayerCheckHBGCol();
 
-if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1)
-{
-	tileIndexBottom = 0;	// ignore bottom side if on a slope
-}
+// Check horizontal platform collisions
+PlayerCheckHPlatformCol();
 
-if((tileIndexTop == 1 || tileIndexBottom == 1) && state != CLIMBING)
-{
-	if(xSpdFinal >= 0) 
-	{
-		x = x - (x % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_right - x);
-	} else
-	{
-		x = x - (x % TILE_SIZE) - (bbox_left - x);
-	}
-	xSpdFinal = 0;
-	xSpd = 0;
-}
-
-
-var platform;
-var i;
-var xOffset = xSpd;
-var platformHalfWidth = 0;
-for(i = 0; i < instance_number(oPlatform); i++) 
-{
-
-	platform = instance_find(oPlatform, i);
-	// Check horizontal collision with Platform
-	platformHalfWidth = (platform.bbox_right - platform.bbox_left) / 2;
-	if(place_meeting(x + xOffset, y + ySpd, platform))
-	{
-		// if player is stationary or moving right and platform is moving left
-		if(x <= platform.x + platformHalfWidth) 
-		{
-			if(bbox_right + xOffset >= platform.bbox_left && bbox_right + xOffset <= platform.bbox_right
-				&& bbox_left + xOffset < platform.bbox_left)
-			{
-				// Falling down
-				//if(ySpd >= 0)
-				//{			
-					//if(y + ySpd >= platform.bbox_top)
-					//{
-						x = platform.bbox_left - 1 - (bbox_right - x);
-						xSpd = 0;
-						xSpdFinal = 0;
-					//}
-				//} else {
-					// jumping up
-					//if(y + ySpd <= platform.bbox_bottom)
-					//{
-						//x = platform.bbox_left - 1 - (bbox_right - x);
-						//xSpd = 0;
-						//xSpdFinal = 0;
-					//}
-				//}
-			}
-		} else 
-		{
-			if(bbox_left + xOffset <= platform.bbox_right && bbox_left + xOffset >= platform.bbox_left
-				&& bbox_right > platform.bbox_right)
-			{
-				if(ySpd >= 0)
-				{			
-					if(y + ySpd >= platform.bbox_bottom)
-					{
-						x = platform.bbox_right + 1 + (x - bbox_left);
-						xSpd = 0;
-						xSpdFinal = 0;
-					}
-				} else {
-					x = platform.bbox_right + 1 + (x - bbox_left);
-					xSpd = 0;
-					xSpdFinal = 0;
-				}
-			}
-		}
-	}
-}
-
-
-x += xSpdFinal;
+// Finalize X Pos after collisions and movement
+PlayerFinalizeXPos();
 
 // Check vertical collisions
 if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+ySpd) <= 1)
@@ -221,46 +75,9 @@ if (floordist >= 0 && state != CLIMBING)
 	floordist = -1;
 }
 
-onPlatform = false;
-
-
-
-// Check vertical collision with Platform
-var yOffset = ySpd;
-if(ySpd == 0)
-{
-	yOffset = 2;
-}
-
-for(i = 0; i < instance_number(oPlatform); i++)
-{
-	platform = instance_find(oPlatform, i);
-	if(place_meeting(x + xSpd, y + yOffset, platform))
-	{
-		if(ySpd >= 0)
-		{
-			if(y + yOffset >= platform.bbox_top && y + yOffset <= platform.bbox_bottom && bbox_top + yOffset <= platform.bbox_top)
-			{
-				y = platform.bbox_top - 1;
-				ySpd = 0;
-				onPlatform = true;
-				state = SKATE_IDLE;
-				platformObject = platform;
-			}
-		} else {
-			if(bbox_top + yOffset <= platform.bbox_bottom && bbox_top + yOffset >= platform.bbox_top && y + yOffset >= platform.bbox_bottom) 
-			{
-				//y = oPlatform.bbox_bottom + 1 + (bbox_top - y);
-				ySpd = 0;
-				state = SKATE_FALLING;
-				jumpTimer = jumpTimerMax;
-				
-			}
-		}
-	}
-}
-
 y += ySpd;
+
+PlayerCheckVPlatformCol();
 
 if (grounded && state != CLIMBING && !onPlatform)
 {
@@ -306,7 +123,6 @@ if(upPressed)
 					x = (floor(bbox_right / TILE_SIZE) * TILE_SIZE) + 8;
 				}
 				xSpd = 0;
-				xSpdFinal = 0;
 				ySpd = 0;
 				y -= ladderClimbSpeed;
 				state = CLIMBING;
@@ -349,7 +165,6 @@ if(downPressed)
 					x = (floor(x / TILE_SIZE) * TILE_SIZE) + (curBoxHalfWidth);
 				}
 				xSpd = 0;
-				xSpdFinal = 0;
 				ySpd = 0;
 				y += ladderClimbSpeed;
 				state = CLIMBING;

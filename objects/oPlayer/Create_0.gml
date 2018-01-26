@@ -75,7 +75,6 @@ grounded = false;
 y_fraction = 0;
 
 jumpCount = 0;
-jumpKeyDown = 0;
 
 ladderClimbSpeed = 2;
 onLadder = false;
