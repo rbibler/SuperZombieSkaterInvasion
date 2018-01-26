@@ -22,8 +22,10 @@ if(sprintPressed)
 
 fallTimerMax = FALL_TIMER_MAX;
 
+// check if on ground
 grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0);
 
+// Check for vertical impetus (i.e. jumping)
 if(grounded || onPlatform) {
 	jumpTimer = 0;
 	fallTimer = 0;
@@ -78,12 +80,14 @@ if(jumpReleased)
 	jumpKeyDown = 0;
 }
 
+// Check for horizontal impetus
 xSpd += ((xMax * xDir) - xSpd) * xAccel;
 if(state == CLIMBING)
 {
 	xSpd = 0;
 }
 
+// Update fractions from last step
 xSpd += x_fraction;
 ySpd += y_fraction;
 

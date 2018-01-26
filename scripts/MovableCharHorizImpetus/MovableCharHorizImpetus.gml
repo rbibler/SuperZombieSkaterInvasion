@@ -1,0 +1,1 @@
+xSpd += ((xMax * xDir) - xSpd) * xAccel;

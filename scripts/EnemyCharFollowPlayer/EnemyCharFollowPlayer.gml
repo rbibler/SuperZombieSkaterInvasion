@@ -1,0 +1,1 @@
+xDir = player.x - x;
