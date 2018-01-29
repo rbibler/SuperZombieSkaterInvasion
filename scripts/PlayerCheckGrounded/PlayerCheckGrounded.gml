@@ -1,0 +1,1 @@
+grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0);
