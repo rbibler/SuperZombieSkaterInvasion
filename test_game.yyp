@@ -55,22 +55,6 @@
             }
         },
         {
-            "Key": "09ac07c4-2f6b-46d3-ba9a-e7a7489514e6",
-            "Value": {
-                "id": "6fa128fe-57dd-4d82-bdbc-e3f37e0800eb",
-                "resourcePath": "scripts\\PlayerCheckInput\\PlayerCheckInput.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "0c9f9e77-a486-4552-8467-2e33d485da11",
-            "Value": {
-                "id": "f1eb2cc7-1c27-4e78-89a7-c9381d0d7064",
-                "resourcePath": "scripts\\PlayerCheckVBGCol\\PlayerCheckVBGCol.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "0d1e7da2-c916-4eb4-b515-14c3629f7d08",
             "Value": {
                 "id": "5c593ca2-af64-44a7-b8fa-b145790cb348",
@@ -132,6 +116,14 @@
                 "id": "be0133a5-fede-4cc9-9ff9-13375b101404",
                 "resourcePath": "rooms\\rWorld1_Stage1\\rWorld1_Stage1.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "261766ec-7f79-4613-b68d-698c532aaaae",
+            "Value": {
+                "id": "e5c6569a-e71c-4512-bf90-3528ee3a3688",
+                "resourcePath": "scripts\\InFloor\\InFloor.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -311,14 +303,6 @@
             }
         },
         {
-            "Key": "638094ab-a58a-4fe0-ae4e-8d626e928878",
-            "Value": {
-                "id": "b70ffac0-0b62-465e-b023-0839a57241d9",
-                "resourcePath": "scripts\\PlayerUpdateAnimation\\PlayerUpdateAnimation.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "648b7ddb-f1aa-4139-9c34-8b912ba9852d",
             "Value": {
                 "id": "3c4145ff-501e-415f-9aed-5e7678b83adb",
@@ -332,14 +316,6 @@
                 "id": "6211d0aa-c438-4c89-9a38-622453750fa4",
                 "resourcePath": "rooms\\init\\init.yy",
                 "resourceType": "GMRoom"
-            }
-        },
-        {
-            "Key": "6ad54af7-1693-441c-8fe0-3f0bbfcc1b0f",
-            "Value": {
-                "id": "14b19b3b-b0c3-4e37-abf0-033cc55a7e72",
-                "resourcePath": "scripts\\PlayerCheckLadderCol\\PlayerCheckLadderCol.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -717,11 +693,7 @@
         "f8996cf5-cd6b-4eef-a835-ec3810975009",
         "860bda6a-2d9e-4734-8d2c-bb58dbc7d4d8",
         "5f0a6d9e-89ae-415d-92d5-ebec889ed5e0",
-        "6bb5a101-27c7-4dfb-940d-ef408eb2e5e5",
-        "0c9f9e77-a486-4552-8467-2e33d485da11",
-        "6ad54af7-1693-441c-8fe0-3f0bbfcc1b0f",
-        "638094ab-a58a-4fe0-ae4e-8d626e928878",
-        "09ac07c4-2f6b-46d3-ba9a-e7a7489514e6"
+        "6bb5a101-27c7-4dfb-940d-ef408eb2e5e5"
     ],
     "tutorial": ""
 }
