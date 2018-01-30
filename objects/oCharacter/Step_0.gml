@@ -1,209 +1,73 @@
 /// @description Insert description here
 // You can write your code in this editor
-/*
-var left = 0;
-var right = 0;;
+
+
+// Grab user input and convert to local variables
+var input = MovableCharCheckAIInput();
+
+var up = input[0];
+var down = input[1];
+var left = input[2];
+var right = input[3];
+var jump = input[4];
+var sprint_shoot = input[5];
+
+// Process input
+
+var skateReleased = left && right == 0;
+var shootPressed = sprint_shoot && !lastInput[5];
+var shootReleased = !sprint_shoot && lastInput[5];
 var xDir = right - left;
-var jumpPressed = 0;
-var jumpReleased = 0;
-var sprintPressed = 0;
-var shootPressed = 0;
-var shootReleased = 0;
+
+// Save to check next step
+lastInput[0] = input[0];
+lastInput[1] = input[1];
+lastInput[2] = input[2];
+lastInput[3] = input[3];
+lastInput[4] = input[4];
+lastInput[5] = input[5];
+
+// Set x speed; sprint or normal
 var xMax = normalXMax;
-var curBoxHalfWidth = (bbox_right - bbox_left) / 2;
-
-image_blend = -1;
-
-if(sprintPressed) 
+if(sprint_shoot) 
 {
 	xMax = sprintXMax;
 }
 
+// Calculate our bounding box for use in collision detection
+var curBoxHalfWidth = (bbox_right - bbox_left) / 2;
+
+image_blend = -1;
+
 fallTimerMax = FALL_TIMER_MAX;
 
-grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0);
+// check if on ground
+PlayerCheckGrounded();
 
-if(grounded || onPlatform) {
-	fallTimer = 0;
-} else {
-	onPlatform = false;
-	state = FALLING;
-}
+PlayerCheckVertImpulse(jump, sprint_shoot);
 
-if(state == FALLING)
-{
-	ySpd = fall_values[fallTimer++];
-	if(fallTimer >= FALL_TIMER_MAX)
-	{
-		fallTimer = FALL_TIMER_MAX - 1;
-	}
-}
+// Check for horizontal impetus
+PlayerCheckHorizImpulse(xMax, xDir);
 
-xSpd += ((xMax * xDir) - xSpd) * xAccel;
-
-xSpd += xFraction;
-ySpd += yFraction;
-
-xFraction = xSpd - (floor(abs(xSpd)) * sign(xSpd));
-xSpd -= xFraction;
-yFraction = ySpd - (floor(abs(ySpd)) * sign(ySpd));
-ySpd -= yFraction;
-
-var xSpdFinal = xSpd;
-
+// Update fractions from last step
+PlayerAddFraction();
 
 // Check Horizontal Collisions
-var colEdge = xSpdFinal >= 0 ? bbox_right : bbox_left;
-var tileIndexTop = tilemap_get_at_pixel(tilemap, colEdge + xSpdFinal, bbox_top);
-var tileIndexBottom = tilemap_get_at_pixel(tilemap, colEdge + xSpdFinal, bbox_bottom);
+PlayerCheckHBGCol();
 
-if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1)
-{
-	tileIndexBottom = 0;	// ignore bottom side if on a slope
-}
+// Check horizontal platform collisions
+PlayerCheckHPlatformCol();
 
-if(tileIndexTop == 1 || tileIndexBottom == 1)
-{
-	if(xSpdFinal >= 0) 
-	{
-		x = x - (x % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_right - x);
-	} else
-	{
-		x = x - (x % TILE_SIZE) - (bbox_left - x);
-	}
-	xSpdFinal = 0;
-	xSpd = 0;
-}
+// Finalize X Pos after collisions and movement
+PlayerFinalizeXPos();
+
+PlayerCheckVPlatformCol();
+
+PlayerCheckVBGCol();
+
+PlayerCheckLadderCol(up, down);
 
 
-var platform;
-var i;
-var xOffset = xSpd;
-var platformHalfWidth = 0;
-for(i = 0; i < instance_number(oPlatform); i++) 
-{
-
-	platform = instance_find(oPlatform, i);
-	// Check horizontal collision with Platform
-	platformHalfWidth = (platform.bbox_right - platform.bbox_left) / 2;
-	if(place_meeting(x + xOffset, y + ySpd, platform))
-	{
-		// if player is stationary or moving right and platform is moving left
-		if(x <= platform.x + platformHalfWidth) 
-		{
-			if(bbox_right + xOffset >= platform.bbox_left && bbox_right + xOffset <= platform.bbox_right
-				&& bbox_left + xOffset < platform.bbox_left)
-			{
-				x = platform.bbox_left - 1 - (bbox_right - x);	
-				xSpd = 0;
-				xSpdFinal = 0;
-			}
-		} else 
-		{
-			if(bbox_left + xOffset <= platform.bbox_right && bbox_left + xOffset >= platform.bbox_left
-				&& bbox_right > platform.bbox_right)
-			{
-				if(ySpd >= 0)
-				{			
-					if(y + ySpd >= platform.bbox_bottom)
-					{
-						x = platform.bbox_right + 1 + (x - bbox_left);
-						xSpd = 0;
-						xSpdFinal = 0;
-					}
-				} else {
-					x = platform.bbox_right + 1 + (x - bbox_left);
-					xSpd = 0;
-					xSpdFinal = 0;
-				}
-			}
-		}
-	}
-}
-
-
-x += xSpdFinal;
-
-// Check vertical collisions
-if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+ySpd) <= 1)
-	{
-	colEdge = ySpd >= 0 ? bbox_bottom : bbox_top;
-	var tileIndexRight = tilemap_get_at_pixel(tilemap, bbox_right, colEdge + ySpd);
-	var tileIndexLeft = tilemap_get_at_pixel(tilemap, bbox_left, colEdge + ySpd);
-
-	if(tileIndexRight == 1 || tileIndexLeft == 1)	
-	{
-		// Falling Down (good movie)
-		if(ySpd >= 0) 
-		{
-			y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);
-		} else 
-		{
-			state = FALLING;
-		}
-		ySpd = 0;
-	}
-}
-
-var floordist = InFloor(tilemap,x,bbox_bottom+ySpd);
-if (floordist >= 0)
-{
-	y += ySpd;
-	y -= (floordist + 1);
-	ySpd = 0;
-	floordist = -1;
-}
-
-onPlatform = false;
-
-
-
-// Check vertical collision with Platform
-var yOffset = ySpd;
-if(ySpd == 0)
-{
-	yOffset = 2;
-}
-
-for(i = 0; i < instance_number(oPlatform); i++)
-{
-	platform = instance_find(oPlatform, i);
-	if(place_meeting(x + xSpd, y + yOffset, platform))
-	{
-		if(ySpd >= 0)
-		{
-			if(y + yOffset >= platform.bbox_top && y + yOffset <= platform.bbox_bottom && bbox_top + yOffset <= platform.bbox_top)
-			{
-				y = platform.bbox_top - 1;
-				ySpd = 0;
-				onPlatform = true;
-				state = IDLE;
-				platformObject = platform;
-			}
-		} else {
-			if(bbox_top + yOffset <= platform.bbox_bottom && bbox_top + yOffset >= platform.bbox_top && y + yOffset >= platform.bbox_bottom) 
-			{
-				ySpd = 0;
-				state = FALLING;
-			}
-		}
-	}
-}
-
-y += ySpd;
-
-if (grounded && !onPlatform)
-{
-	y += abs(floordist) - 1;
-	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE - 1)
-	{
-		if (tilemap_get_at_pixel(tilemap,x,bbox_bottom + 1) > 1)
-		{
-			y += abs(InFloor(tilemap,x,bbox_bottom + 1)); 
-		}
-	}
-}
-		
 
 if(onPlatform)
 {
@@ -212,39 +76,20 @@ if(onPlatform)
 }
 
 
-if(state != lastState)
+//PlayerUpdateAnimation(down, up, left, right, shootPressed, shootReleased);
+
+
+if(shootReleased && canShoot)
 {
-	image_index = 0;
+	with(instance_create_layer(x + 6, y - 25, "Collidable_Objects", oProjRock))
+	{
+		speed = 7 * other.lastDir;
+		
+	}
+	canShoot = false;
 }
-lastState = state;
 
-
-
-
-// Image rotation based on direction
-// Check direction
-image_xscale = sign(xSpd);
-if(image_xscale == 0) 
+if(shootPressed)
 {
-	image_xscale = lastDir;
+	canShoot = true;
 }
-lastDir = image_xscale;
-*/
-
-
-script_execute(CheckGroundScript, tilemap, x, bbox_bottom);
-script_execute(HorizImpetusScript);
-script_execute(VertImpetusScript);
-script_execute(AddFractionScript);
-script_execute(CheckHBGColScript);
-script_execute(CheckHPlatformScript);
-script_execute(FinalizeHPosScript);
-script_execute(CheckVBGColScript);
-script_execute(CheckVPlatformScript);
-script_execute(FinalizeVPosScript);
-//state = 3;
-
-
-
-
-

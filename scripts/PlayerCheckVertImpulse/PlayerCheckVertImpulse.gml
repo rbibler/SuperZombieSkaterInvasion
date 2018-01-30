@@ -12,7 +12,7 @@ if(grounded || onPlatform) {
 	// Not jumping or falling, so reset timers
 	jumpTimer = 0;
 	fallTimer = 0;
-	if(CanJump()) 
+	if(PlayerCanJump(jumpPressed)) 
 	{
 		grounded = false;
 		state = SKATE_JUMPING;
