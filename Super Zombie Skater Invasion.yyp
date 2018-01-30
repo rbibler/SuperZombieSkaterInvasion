@@ -503,6 +503,22 @@
             }
         },
         {
+            "Key": "a2b36813-e14f-4ceb-8b54-833889777e70",
+            "Value": {
+                "id": "8974c00b-f2b2-47a7-ad19-a0244490319d",
+                "resourcePath": "objects\\oTeleporter\\oTeleporter.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a8731e12-b90a-4585-8c6f-38fcadda9eb2",
+            "Value": {
+                "id": "6c9d57b3-dddd-412b-a075-b2b80eb20532",
+                "resourcePath": "sprites\\sTeleporter\\sTeleporter.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a9ba8b4c-5f7d-40e7-ae5c-d2a63d4f770d",
             "Value": {
                 "id": "1042c87d-8296-439d-956d-83d1c9d06757",
