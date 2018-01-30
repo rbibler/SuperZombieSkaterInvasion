@@ -66,6 +66,7 @@ lastInput[2] = false;
 lastInput[3] = false;
 lastInput[4] = false;
 lastInput[5] = false;
+lastInput[6] = false;
 
 normalXMax = 3.5;
 sprintXMax = 4.5;

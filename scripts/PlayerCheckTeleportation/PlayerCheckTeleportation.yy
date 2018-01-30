@@ -1,8 +1,8 @@
 {
-    "id": "a9ba8b4c-5f7d-40e7-ae5c-d2a63d4f770d",
+    "id": "d861ecb9-e0b2-4809-9f15-f59f063c4104",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "MovableCharFinalizeVPos",
+    "name": "PlayerCheckTeleportation",
     "IsCompatibility": false,
     "IsDnD": false
 }

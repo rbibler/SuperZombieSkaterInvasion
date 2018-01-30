@@ -12,6 +12,7 @@ var left = keyboard_check(vk_left);
 var right = keyboard_check(vk_right);
 var jump = keyboard_check(vk_space);
 var sprint_shoot = keyboard_check(vk_control);
+var select = keyboard_check(vk_shift);
 
 input[0] = up;
 input[1] = down;
@@ -19,5 +20,6 @@ input[2] = left;
 input[3] = right;
 input[4] = jump;
 input[5] = sprint_shoot;
+input[6] = select;
 
 return input;
