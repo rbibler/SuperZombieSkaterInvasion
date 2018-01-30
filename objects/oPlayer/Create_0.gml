@@ -53,12 +53,15 @@
 #macro	GLIDING						0xC00				// Jumping
 #macro	GLIDING_FALL				0xC10
 
+#macro SKATE_TELEPORTING			0x3234
+
 
 
 // state variables
 state = SKATE_IDLE;
 lastState = -1;
 canShoot = true;
+teleporterCounter = 0;
 
 lastInput[0] = false;
 lastInput[1] = false;
@@ -68,6 +71,9 @@ lastInput[4] = false;
 lastInput[5] = false;
 lastInput[6] = false;
 
+
+teleportSpeed = 6;
+
 normalXMax = 3.5;
 sprintXMax = 4.5;
 xSpd = 0;
@@ -75,6 +81,8 @@ xSpdFromFriends = 0;
 xAccel = 0.2;
 x_fraction = 0;
 
+targetX = 0;
+targetY = 0;
 
 ySpd = 1;
 ySpdFromFriends = 0;

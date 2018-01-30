@@ -7,6 +7,7 @@ var select_pressed = argument0;
 
 if(select_pressed) {
 	var teleporter = instance_find(oTeleporter, 0);
-	x = teleporter.x;
-	y = teleporter.y;
+	targetX = teleporter.x;
+	targetY = teleporter.y;
+	state = SKATE_TELEPORTING;
 }

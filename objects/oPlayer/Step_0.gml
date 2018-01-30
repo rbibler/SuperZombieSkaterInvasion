@@ -104,3 +104,7 @@ if(shootPressed)
 {
 	canShoot = true;
 }
+
+if(teleporterCounter > 0) {
+	teleporterCounter--;
+}

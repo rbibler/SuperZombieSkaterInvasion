@@ -4,9 +4,11 @@
 xTo = follow.x;
 yTo = follow.y
 var playerDir = follow.direction;
+var followSpeed = 2;
 
-x += (xTo - x) / 2;
-y += (yTo - y) / 2;
+
+x += (xTo - x) / followSpeed;
+y += (yTo - y) / followSpeed;
 
 var xFinal = x - 200;
 var yFinal = y - 150;
