@@ -137,7 +137,7 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "0",
-            "varName": "x_fraction",
+            "varName": "xFraction",
             "varType": 0
         },
         {
@@ -249,7 +249,7 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "0",
-            "varName": "y_fraction",
+            "varName": "yFraction",
             "varType": 0
         },
         {

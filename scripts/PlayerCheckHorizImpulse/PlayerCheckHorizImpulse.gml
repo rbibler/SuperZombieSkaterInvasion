@@ -8,12 +8,10 @@ var xDir = argument1;
 
 
 xSpd += ((xMax * xDir) - xSpd) * xAccel;
+
 if(state == CLIMBING)
 {
 	xSpd = 0;
 } else if(state == SKATE_TELEPORTING) {
-	xSpd = sign(targetX - x) * teleportSpeed;
-	if(abs(targetX - x) <= 10 && abs(targetY - y) <= 10) {
-		state = SKATE_IDLE;
-	}
+	xSpd = sign(targetX - x) * teleportSpeedX;
 }

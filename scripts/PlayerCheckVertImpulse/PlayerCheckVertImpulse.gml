@@ -7,10 +7,7 @@ var jumpPressed = argument0;
 var sprintPressed = argument1;
 
 if(state == SKATE_TELEPORTING) {
-	ySpd = sign(y - targetY) * teleportSpeed;
-	if( abs(targetY - y) <= 10 && abs(targetX - x) <= 10) {
-		state = SKATE_IDLE;
-	}
+	ySpd = sign(targetY - y) * teleportSpeedY;
 } else {
 
 	// Check for vertical impetus (i.e. jumping)

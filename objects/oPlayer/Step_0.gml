@@ -50,6 +50,7 @@ PlayerCheckGrounded();
 
 PlayerCheckTeleportation(selectPressed);
 
+
 PlayerCheckVertImpulse(jump, sprint_shoot);
 
 
@@ -59,21 +60,23 @@ PlayerCheckHorizImpulse(xMax, xDir);
 // Update fractions from last step
 PlayerAddFraction();
 
-// Check Horizontal Collisions
-PlayerCheckHBGCol();
 
-// Check horizontal platform collisions
-PlayerCheckHPlatformCol();
+// Check Horizontal Collisions
+if(state != SKATE_TELEPORTING) {
+	PlayerCheckHBGCol();
+	PlayerCheckHPlatformCol();
+}
 
 // Finalize X Pos after collisions and movement
 PlayerFinalizeXPos();
 
-PlayerCheckVPlatformCol();
-
-PlayerCheckVBGCol();
-
-PlayerCheckLadderCol(up, down);
-
+if(state != SKATE_TELEPORTING) {
+	PlayerCheckVPlatformCol();
+	PlayerCheckVBGCol();
+	PlayerCheckLadderCol(up, down);
+} else {
+	y += ySpd;
+}
 
 if(onPlatform)
 {
@@ -92,9 +95,10 @@ PlayerUpdateAnimation(down, up, left, right, shootPressed, shootReleased);
 
 if(shootReleased && canShoot)
 {
-	with(instance_create_layer(x + 6, y - 25, "Collidable_Objects", oProjRock))
+	with(instance_create_layer(x + 6, y - 25, "Collidable_Objects", oTeleporterBall))
 	{
-		speed = 7 * other.lastDir;
+		xDir = other.lastDir;
+		//speed = 7 * other.lastDir;
 		
 	}
 	canShoot = false;
@@ -103,8 +107,4 @@ if(shootReleased && canShoot)
 if(shootPressed)
 {
 	canShoot = true;
-}
-
-if(teleporterCounter > 0) {
-	teleporterCounter--;
 }

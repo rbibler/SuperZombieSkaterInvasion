@@ -61,7 +61,6 @@
 state = SKATE_IDLE;
 lastState = -1;
 canShoot = true;
-teleporterCounter = 0;
 
 lastInput[0] = false;
 lastInput[1] = false;
@@ -72,22 +71,23 @@ lastInput[5] = false;
 lastInput[6] = false;
 
 
-teleportSpeed = 6;
+teleportSpeedX = 10;
+teleportSpeedY = 10;
+teleportSpeedMax = 10;
 
 normalXMax = 3.5;
 sprintXMax = 4.5;
 xSpd = 0;
 xSpdFromFriends = 0;
 xAccel = 0.2;
-x_fraction = 0;
+xFraction = 0;
 
 targetX = 0;
 targetY = 0;
 
 ySpd = 1;
-ySpdFromFriends = 0;
+yFraction = 0;
 grounded = false;
-y_fraction = 0;
 
 jumpCount = 0;
 

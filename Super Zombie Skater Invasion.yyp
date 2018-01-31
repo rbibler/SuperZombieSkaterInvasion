@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "21ea37cd-94c7-48af-be2f-a48dd52d7d5b",
+            "Value": {
+                "id": "15193222-946a-4c47-8a8f-d717fa0bc81f",
+                "resourcePath": "sprites\\sTeleporterBall\\sTeleporterBall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "26df12a1-f2aa-45be-baa3-89c0fad98406",
             "Value": {
                 "id": "1e6425ae-2004-43a7-bdb9-4f1bd7e7f69c",
@@ -564,6 +572,14 @@
                 "id": "7b4b95cf-5945-4c78-988f-fbbabed715d8",
                 "resourcePath": "sprites\\sBGBeachLayer4Img0\\sBGBeachLayer4Img0.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d31469eb-2f8a-4b39-8a65-6b1024836285",
+            "Value": {
+                "id": "46444ccf-85d0-48d9-8ceb-f379525ab155",
+                "resourcePath": "objects\\oTeleporterBall\\oTeleporterBall.yy",
+                "resourceType": "GMObject"
             }
         },
         {
