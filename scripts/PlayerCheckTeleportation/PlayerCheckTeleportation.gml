@@ -11,12 +11,15 @@ if(state == SKATE_TELEPORTING) {
 		ySpd = 0;
 		xFraction = 0;
 		yFraction = 0;
+		with(instance_find(oTeleporterBall, 0)) {
+			instance_destroy();
+		}
 	}
 }
 
 
 if(select_pressed) {
-	var teleporter = instance_find(oTeleporter, 0);
+	var teleporter = instance_find(oTeleporterBall, 0);
 	targetX = teleporter.x;
 	targetY = teleporter.y;
 	var xDiff = abs(targetX - x);
@@ -29,4 +32,7 @@ if(select_pressed) {
 		teleportSpeedY = teleportSpeedMax * (yDiff / xDiff);
 	}
 	state = SKATE_TELEPORTING;
+	with(teleporter) {
+		stopped = true;
+	}
 }

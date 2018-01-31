@@ -95,10 +95,23 @@ PlayerUpdateAnimation(down, up, left, right, shootPressed, shootReleased);
 
 if(shootReleased && canShoot)
 {
-	with(instance_create_layer(x + 6, y - 25, "Collidable_Objects", oTeleporterBall))
+	var proj = instance_create_layer(x + 6, y - 25, "Collidable_Objects", oTeleporterBall);
+	with(proj)
 	{
-		xDir = other.lastDir;
-		//speed = 7 * other.lastDir;
+		if(right) {
+			proj.xDir = 1;
+		} else if(left) {
+			proj.xDir = -1;
+		} else {
+			proj.xDir = other.lastDir;
+		}
+		if(up) {
+			proj.yDir = 1;
+			proj.jumpTimer = 0;
+			proj.xDir = right - left;
+		} else {
+			proj.jumpTimer = 15;
+		}
 		
 	}
 	canShoot = false;

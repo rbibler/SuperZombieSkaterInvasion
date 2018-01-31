@@ -1,6 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+tilemap = layer_tilemap_get_id(layer_get_id("Collision"));
+
+onPlatform = false;
+grounded = false;
 xMax = 10;
 xAccel = 0.2;
 xSpd = 0;
