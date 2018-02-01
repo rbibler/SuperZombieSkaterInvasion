@@ -24,7 +24,11 @@ if(!stopped)
 	}
 	
 	if(grounded) {
-		xSpd -= 0.5 * xDir;
+		stopped = true;
+		xSpd = 0;
+		ySpd = 0;
+		xFraction = 0;
+		yFraction = 0;
 	} else {
 		xSpd += ((xMax * xDir) - xSpd) * xAccel;
 	}
@@ -35,14 +39,6 @@ PlayerCheckHBGCol();
 PlayerCheckVBGCol();
 	
 	
-	y += ySpd;
-	x += xSpd;
+y += ySpd;
+x += xSpd;
 
-var deltaX = xprevious - x;
-		if(abs(deltaX) < 1) {
-			stopped = true;
-			xSpd = 0;
-			ySpd = 0;
-			xFraction = 0;
-			yFraction = 0;
-		}

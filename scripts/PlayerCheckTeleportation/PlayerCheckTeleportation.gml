@@ -20,23 +20,25 @@ if(state == SKATE_TELEPORTING) {
 
 if(select_pressed) {
 	var teleporter = instance_find(oTeleporterBall, 0);
-	targetX = teleporter.x;
-	targetY = teleporter.y;
-	var xDiff = abs(targetX - x);
-	var yDiff = abs(targetY - y);
-	if(yDiff > xDiff) {
-		teleportSpeedY = teleportSpeedMax;
-		teleportSpeedX = teleportSpeedMax * (xDiff / yDiff);
-	} else {
-		teleportSpeedX = teleportSpeedMax;
-		teleportSpeedY = teleportSpeedMax * (yDiff / xDiff);
-	}
-	state = SKATE_TELEPORTING;
-	with(teleporter) {
-		stopped = true;
-		xSpd = 0;
-		ySpd = 0;
-		xFraction = 0;
-		yFraction = 0;
+	if(teleporter != noone) {
+		targetX = teleporter.x;
+		targetY = teleporter.y;
+		var xDiff = abs(targetX - x);
+		var yDiff = abs(targetY - y);
+		if(yDiff > xDiff) {
+			teleportSpeedY = teleportSpeedMax;
+			teleportSpeedX = teleportSpeedMax * (xDiff / yDiff);
+		} else {
+			teleportSpeedX = teleportSpeedMax;
+			teleportSpeedY = teleportSpeedMax * (yDiff / xDiff);
+		}
+		state = SKATE_TELEPORTING;
+		with(teleporter) {
+			stopped = true;
+			xSpd = 0;
+			ySpd = 0;
+			xFraction = 0;
+			yFraction = 0;
+		}
 	}
 }

@@ -463,6 +463,14 @@
             }
         },
         {
+            "Key": "9cde283e-73a1-4a04-a3ac-0164d05778c8",
+            "Value": {
+                "id": "85133caa-7417-4f2a-b460-cce16fdd36a9",
+                "resourcePath": "objects\\oWeapon\\oWeapon.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9f34a0be-f009-47c4-9d90-1dce69f99786",
             "Value": {
                 "id": "e5e2a7a5-dbd2-4ab2-b6d2-e4cc0b892713",
