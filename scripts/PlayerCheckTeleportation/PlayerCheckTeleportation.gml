@@ -34,5 +34,9 @@ if(select_pressed) {
 	state = SKATE_TELEPORTING;
 	with(teleporter) {
 		stopped = true;
+		xSpd = 0;
+		ySpd = 0;
+		xFraction = 0;
+		yFraction = 0;
 	}
 }
