@@ -11,6 +11,7 @@ if(state == SKATE_TELEPORTING) {
 		ySpd = 0;
 		xFraction = 0;
 		yFraction = 0;
+		ammoOnScreen = 0;
 		with(instance_find(oTeleporterBall, 0)) {
 			instance_destroy();
 		}

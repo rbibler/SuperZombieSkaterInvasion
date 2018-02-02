@@ -8,6 +8,6 @@ weaponHitPower = -1;
 weaponFlightProfile = -1;
 weaponMaxInFlight = -1;
 
-currentWeapon;
+currentWeapon = 0;
 
 

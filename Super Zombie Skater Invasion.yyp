@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "42056e78-7455-4755-b5bd-41fd5257466b",
+            "Value": {
+                "id": "6b8f6068-7af2-4279-90df-d3e4a1d08953",
+                "resourcePath": "scripts\\PlayerCanShoot\\PlayerCanShoot.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "44caaf93-6c33-4d76-b9d4-ca01980603d5",
             "Value": {
                 "id": "a15395ba-2ea8-460b-98d3-14dfe3a4e011",
@@ -712,6 +720,7 @@
         "09ac07c4-2f6b-46d3-ba9a-e7a7489514e6",
         "d861ecb9-e0b2-4809-9f15-f59f063c4104",
         "26df12a1-f2aa-45be-baa3-89c0fad98406",
+        "42056e78-7455-4755-b5bd-41fd5257466b",
         "c28dedb3-407c-4484-b5bc-0dd1be773720",
         "1fd66bdf-4c28-4e33-85ce-4bc734ea39ab",
         "807dbea1-bbcb-4e38-a5bf-cbf4199da924"

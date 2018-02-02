@@ -93,7 +93,7 @@ if(y >= (room_height + sprite_height))
 PlayerUpdateAnimation(down, up, left, right, shootPressed, shootReleased);
 
 
-if(shootReleased && canShoot)
+if(shootReleased && PlayerCanShoot())
 {
 	var proj = instance_create_layer(x + 6, y - 25, "Collidable_Objects", oTeleporterBall);
 	with(proj)
@@ -105,19 +105,21 @@ if(shootReleased && canShoot)
 		} else {
 			proj.xDir = other.lastDir;
 		}
-		if(up) {
+		if(down) {
+			proj.jumpTimer = 15;
+		} else {
 			proj.yDir = 1;
 			proj.jumpTimer = 0;
-			proj.xDir = right - left;
-		} else {
-			proj.jumpTimer = 15;
 		}
 		
 	}
-	canShoot = false;
+	cooldown = 200;
+	ammoOnScreen = 1;
 }
 
-if(shootPressed)
-{
-	canShoot = true;
-}
+cooldown -= 1;
+
+//if(shootPressed)
+//{
+//	canShoot = true;
+//}

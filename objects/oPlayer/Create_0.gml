@@ -62,6 +62,10 @@ state = SKATE_IDLE;
 lastState = -1;
 canShoot = true;
 
+cooldown = 5;
+ammoMax = 1;
+ammoOnScreen = 0;
+
 lastInput[0] = false;
 lastInput[1] = false;
 lastInput[2] = false;
