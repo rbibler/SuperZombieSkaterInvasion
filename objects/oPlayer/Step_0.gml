@@ -21,14 +21,7 @@ var shootReleased = !sprint_shoot && lastInput[5];
 var selectPressed = select && !lastInput[6];
 var xDir = right - left;
 
-// Save to check next step
-lastInput[0] = input[0];
-lastInput[1] = input[1];
-lastInput[2] = input[2];
-lastInput[3] = input[3];
-lastInput[4] = input[4];
-lastInput[5] = input[5];
-lastInput[6] = input[6];
+
 
 // Set x speed; sprint or normal
 var xMax = normalXMax;
@@ -110,6 +103,9 @@ if(shootReleased && PlayerCanShoot())
 		} else {
 			proj.yDir = 1;
 			proj.jumpTimer = 0;
+			if(up) {
+				proj.xDir = right - left;
+			}
 		}
 		
 	}
@@ -119,7 +115,12 @@ if(shootReleased && PlayerCanShoot())
 
 cooldown -= 1;
 
-//if(shootPressed)
-//{
-//	canShoot = true;
-//}
+
+// Save to check next step
+lastInput[0] = input[0];
+lastInput[1] = input[1];
+lastInput[2] = input[2];
+lastInput[3] = input[3];
+lastInput[4] = input[4];
+lastInput[5] = input[5];
+lastInput[6] = input[6];

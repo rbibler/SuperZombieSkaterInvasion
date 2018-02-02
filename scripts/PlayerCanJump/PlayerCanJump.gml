@@ -3,4 +3,4 @@
 
 var jumpKeyPress = argument0;
 
-return state != SKATE_JUMPING && jumpKeyPress;
+return state != SKATE_JUMPING && jumpKeyPress && !lastInput[4];

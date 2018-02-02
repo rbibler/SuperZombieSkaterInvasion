@@ -24,7 +24,7 @@ switch(state)
 		{
 			state = SKATE_CROUCH;
 			sprite_index = sSkaterCrouch;
-		} else if(shootPressed)
+		} else if(shootPressed && PlayerCanShoot())
 		{
 			state = SKATE_IDLE_WEAPON_DRAWN;
 			sprite_index = sSkaterSlingShotIdle;
@@ -39,7 +39,7 @@ switch(state)
 		{
 			state = SKATE_CROUCH;
 			sprite_index = sSkaterCrouch;
-		} else if(shootPressed)
+		} else if(shootPressed && PlayerCanShoot())
 		{
 			state = SKATE_SKATING_WEAPON_DRAWN;
 			var imgIndex = image_index;
