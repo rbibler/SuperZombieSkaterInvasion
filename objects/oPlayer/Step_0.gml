@@ -86,31 +86,33 @@ if(y >= (room_height + sprite_height))
 PlayerUpdateAnimation(down, up, left, right, shootPressed, shootReleased);
 
 
-if(shootReleased && PlayerCanShoot())
+if(PlayerCanShoot())
 {
-	var proj = instance_create_layer(x + 6, y - 25, "Collidable_Objects", oTeleporterBall);
-	with(proj)
-	{
-		if(right) {
-			proj.xDir = 1;
-		} else if(left) {
-			proj.xDir = -1;
-		} else {
-			proj.xDir = other.lastDir;
-		}
-		if(down) {
-			proj.jumpTimer = 15;
-		} else {
-			proj.yDir = 1;
-			proj.jumpTimer = 0;
-			if(up) {
-				proj.xDir = right - left;
-			}
-		}
+	//var proj = instance_create_layer(x + 6, y - 25, "Collidable_Objects", oTeleporterBall);
+	//with(proj)
+	//{
+	//	if(right) {
+	//		proj.xDir = 1;
+	//	} else if(left) {
+	//		proj.xDir = -1;
+	//	} else {
+	//		proj.xDir = other.lastDir;
+	//	}
+	//	if(down) {
+	//		proj.jumpTimer = 15;
+	//	} else {
+	//		proj.yDir = 1;
+	//		proj.jumpTimer = 0;
+	//		if(up) {
+	//			proj.xDir = right - left;
+	//		}
+	//	}
 		
-	}
-	cooldown = 200;
-	ammoOnScreen = 1;
+	//}
+	//cooldown = 200;
+	//ammoOnScreen = 1;
+	
+	fireWeapon(shootPressed, shootReleased);
 }
 
 cooldown -= 1;

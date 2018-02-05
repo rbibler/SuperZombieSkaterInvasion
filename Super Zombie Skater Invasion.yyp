@@ -218,7 +218,7 @@
             "Key": "42056e78-7455-4755-b5bd-41fd5257466b",
             "Value": {
                 "id": "6b8f6068-7af2-4279-90df-d3e4a1d08953",
-                "resourcePath": "scripts\\PlayerCanShoot\\PlayerCanShoot.yy",
+                "resourcePath": "scripts\\PlayerCheckWeapon\\PlayerCheckWeapon.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -420,6 +420,14 @@
                 "id": "992d9d8b-85b5-4bfa-87da-16dda789bd02",
                 "resourcePath": "scripts\\PlayerCanJump\\PlayerCanJump.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8843e624-1f7e-4cac-92cb-69fe4d665c27",
+            "Value": {
+                "id": "b91e199c-a2f1-488d-8d03-39f37d9d2428",
+                "resourcePath": "objects\\oControllers\\oControllers.yy",
+                "resourceType": "GMObject"
             }
         },
         {
