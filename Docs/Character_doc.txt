@@ -1,0 +1,99 @@
+Characters:
+	- Player: Skater
+		- Abilities:
+			- Horizontal movement: Skating, Sprint skating
+			- Vertical movement: Jumping, gliding
+			- Attack: Board swing, board pogo, slingshot, hand gun, alien disease gun, board boomarang, hand grenade
+			- Power ups: Health renewal, one up, super strength (board boomarang), anti-grav board, immunity board, teleporter board, zombie control (or zombie cure?)
+			- Animations: Skating, crouching, jumping, falling, idle, hit, dead, infected, slingshot, board swing, board pogo, hand gun, disease gun, board throw (incl teleporter), hand grenade
+			
+			
+	- Zombie Skater
+		- Abilities: 
+			- Horizontal movement: slow skating
+			- Vertical movement: none
+			- Attack: physical 
+			- Animations: skating, hit, dead
+		AI: Back and forth
+		
+	- Zombie rollerblader
+		- Abilities:
+			- Horizontal movement: fast(er) skating
+			- Vertical movement: jumping
+			- Attack: physical
+			- Animations: skating, hit, dead
+			- AI: Back and forth, random jumps
+		
+	- Zombie human:
+		- Abilities:
+			- Horizontal movement: slow walk
+			- Vertical movement: none
+			- Attack: physical
+			- Animations: walking, hit, dead
+			- AI: Follow skater within limited area
+			
+	- Seagull:
+		- Abilities:
+			- Horizontal movment: flying
+			- Vertical movement: flying
+			- Attack: physical
+			- Animations: flying, hit, dead
+			- AI: Fly around, dive bomb skater 
+			
+	Surfer zombie:
+		- Abilities: 
+			- Horizontal movement: running
+			- Vertical movement: none
+			- Attack: board swing
+			- Animations: running, board swing, hit, dead
+			- AI: back and forth
+			
+	Zombie Hackey Sacker:
+		- Abilities:
+			- Horizontal movement: none
+			- Vertical movement: hop
+			- Attack: sack
+			- Animations: hackey sacking, hop, hit, dead
+			- AI: wait, kick hackey sack, hop if skater jumps
+			
+	Zombie BMXer:
+		- Abilities:
+			- Horizontal movement: bike
+			- Veritcal movment: bunny hop
+			- Attack: physical
+			- Animations: biking, hopping, hit, dead
+			- AI: bike through scene at trigger point
+			
+	Zombie Frisbee Player:
+		- Abilities: 
+			- Horizontal movement: run
+			- Vertical movement: dive
+			- Attack: frisbee/physical
+			- Animations: throw disc, run, dive, hit, dead
+			- AI: throw disc, run at player, dive
+	
+	Zombie Cop:
+		- Abilities:
+			- Horizontal movement: walking
+			- Vertical movement: none
+			- Attack: Pistol
+			- Animations: walking, shooting, hit, dead
+			- AI: back and forth, long range fire
+			
+	Coyote:
+		- Abilities:
+			- Horizontal movement: bounding running
+			- Veritcal movement: none
+			- Attack: physical
+			- Animations: running, hit, dead
+			- AI: run at skater after trigger
+			
+	Zombie Alien guard:
+		- Abilities:
+			- Horizontal movement: none
+			- Vertical movement: none
+			- Attack: zombie gun
+			- Animations: idle, shooting, hit, dead
+			- AI: wait, then shoot
+			
+			
