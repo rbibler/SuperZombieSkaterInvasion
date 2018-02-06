@@ -13,87 +13,180 @@ Characters:
 			- Horizontal movement: slow skating
 			- Vertical movement: none
 			- Attack: physical 
-			- Animations: skating, hit, dead
-		AI: Back and forth
+		- Animations: skating, hit, dead
+		- AI: Back and forth
+		- BG Collisions: standard
 		
 	- Zombie rollerblader
 		- Abilities:
 			- Horizontal movement: fast(er) skating
 			- Vertical movement: jumping
 			- Attack: physical
-			- Animations: skating, hit, dead
-			- AI: Back and forth, random jumps
+		- Animations: skating, hit, dead
+		- AI: Back and forth, random jumps
+		- BG Collisions: standard	
 		
 	- Zombie human:
 		- Abilities:
 			- Horizontal movement: slow walk
 			- Vertical movement: none
 			- Attack: physical
-			- Animations: walking, hit, dead
-			- AI: Follow skater within limited area
-			
+		- Animations: walking, hit, dead
+		- AI: Follow skater within limited area
+		- BG Collisions: standard
+		
 	- Seagull:
 		- Abilities:
 			- Horizontal movment: flying
 			- Vertical movement: flying
 			- Attack: physical
-			- Animations: flying, hit, dead
-			- AI: Fly around, dive bomb skater 
+		- Animations: flying, hit, dead
+		- AI: Fly around, dive bomb skater 
+		- BG Collisions: none	
 			
 	Surfer zombie:
 		- Abilities: 
 			- Horizontal movement: running
 			- Vertical movement: none
 			- Attack: board swing
-			- Animations: running, board swing, hit, dead
-			- AI: back and forth
+		- Animations: running, board swing, hit, dead
+		- AI: back and forth
+		- BG collisions: standard
 			
 	Zombie Hackey Sacker:
 		- Abilities:
 			- Horizontal movement: none
 			- Vertical movement: hop
 			- Attack: sack
-			- Animations: hackey sacking, hop, hit, dead
-			- AI: wait, kick hackey sack, hop if skater jumps
+		- Animations: hackey sacking, hop, hit, dead
+		- AI: wait, kick hackey sack, hop if skater jumps
+		- BG collisions: None (static position) 
 			
 	Zombie BMXer:
 		- Abilities:
 			- Horizontal movement: bike
 			- Veritcal movment: bunny hop
 			- Attack: physical
-			- Animations: biking, hopping, hit, dead
-			- AI: bike through scene at trigger point
-			
+		- Animations: biking, hopping, hit, dead
+		- AI: bike through scene at trigger point
+		- BG collisions: standard
+		
 	Zombie Frisbee Player:
 		- Abilities: 
 			- Horizontal movement: run
 			- Vertical movement: dive
 			- Attack: frisbee/physical
-			- Animations: throw disc, run, dive, hit, dead
-			- AI: throw disc, run at player, dive
+		- Animations: throw disc, run, dive, hit, dead
+		- AI: throw disc, run at player, dive
+		- BG Collisions: standard
+	
 	
 	Zombie Cop:
 		- Abilities:
 			- Horizontal movement: walking
 			- Vertical movement: none
 			- Attack: Pistol
-			- Animations: walking, shooting, hit, dead
-			- AI: back and forth, long range fire
-			
+		- Animations: walking, shooting, hit, dead
+		- AI: back and forth, long range fire
+		- BG Collisions: standard
+		
 	Coyote:
 		- Abilities:
 			- Horizontal movement: bounding running
 			- Veritcal movement: none
 			- Attack: physical
-			- Animations: running, hit, dead
-			- AI: run at skater after trigger
-			
+		- Animations: running, hit, dead
+		- AI: run at skater after trigger
+		- BG Collisions: standard
+		
 	Zombie Alien guard:
 		- Abilities:
 			- Horizontal movement: none
 			- Vertical movement: none
 			- Attack: zombie gun
-			- Animations: idle, shooting, hit, dead
-			- AI: wait, then shoot
+		- Animations: idle, shooting, hit, dead
+		- AI: wait, then shoot
+		- BG Collisions: none (static)
+		
+	Zombie Kamakazie:
+		- Abilities:
+			- Horizontal movement: runs
+			- Vertical movement: jumps
+			- Attack: explodes into zombie goo
+		- Animations: Running, jumping, flashing, exploding, hit, dead
+		- AI: patrol. When detect player, run at and explode 
+		- BG Collisions: standard
+		
+	Zombie Floating Blob:
+		- Abilities: 
+			- Horizontal movement: floats
+			- Vertical movement: floats
+			- Attack: phyiscal
+		- Animations: floating, hit, dead
+		- AI: Float aimlessly
+		- BG Collisions: none	
 			
+			
+	Character Hierarchy:
+	
+		- Base Character
+			- Player
+			- Floating Enemy
+				- Zombie Seagull
+				- Zombie floating blob
+			- Walking/Running Enemy
+				- Zombie Skater
+				- Zombie Roller blader
+				- Zombie Surfer
+				- Zombie Frisbee Player
+				- Zombie Alien Guard
+				- Zombie Hackey Sacker
+				- Coyote
+				- Zombie Cop
+				- Zombie kamakazie
+			- Vehicle Enemy
+				- Zombie BMXer
+			
+			
+	Character attributes:
+	
+		- Base Character:
+			- xDir
+			- lastXDir
+			- yDir
+			- lastYDir
+			- xSpd
+			- ySpd
+			- xFraction
+			- yFraction
+			- health
+			- state
+			- normalXMax
+			- sprintXMax
+			- jumpCounter
+			- fallCounter
+			- jumpValues[]
+			- fallValues[]
+			- grounded
+			- onPlatform
+			
+		Floating Enemy:
+		Walking/Running Enemy:
+		Vehicle Enemy: 
+		
+		
+	Character functions:
+		- Check grounded
+		- Check Input (controller input for player, ai input for enemies)
+		- Update Horizontal impetus
+		- Update Vertical impetus
+		- Check Horizontal BG Collisions
+		- Check Horizontal Platform Collisions
+		- Update X Position
+		- Check Vertical BG Collisions
+		- Check Vertical Platform Collisions
+		- Update Y Position
+		- Update Attack status
+		- Update Animations
+		
 			
