@@ -1,8 +1,8 @@
 {
-    "id": "464258ab-3f17-42af-852c-7383fe387194",
+    "id": "86626fbd-c685-4e6f-b16a-a13565ac7541",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "PlayerCheckInput",
+    "name": "CanJump",
     "IsCompatibility": false,
     "IsDnD": false
 }

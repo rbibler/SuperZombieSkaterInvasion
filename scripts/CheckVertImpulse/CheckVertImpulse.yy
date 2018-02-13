@@ -1,8 +1,8 @@
 {
-    "id": "464258ab-3f17-42af-852c-7383fe387194",
+    "id": "c1d37467-347e-4a23-8bb6-acd6b1187aaa",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "PlayerCheckInput",
+    "name": "CheckVertImpulse",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -11,7 +11,7 @@ var up = keyboard_check(vk_up);
 var down = keyboard_check(vk_down);
 var left = keyboard_check(vk_left);
 var right = keyboard_check(vk_right);
-var a = keyboard_check(vk_space);
+var a = keyboard_check(ord("X"));
 var b = keyboard_check(ord("Z"));
 var select = keyboard_check(vk_shift);
 
@@ -36,4 +36,20 @@ input[4] = a;
 input[5] = b;
 input[6] = b;
 
-return input;
+
+upPressed = input[0];
+downPressed = input[1];
+leftPressed = input[2];
+rightPressed = input[3];
+jumpPressed = input[4];
+shootPressed = input[5];
+selectPressed = input[6];
+
+// Process input
+
+movementReleased = leftPressed && rightPressed == 0;
+jumpReleased = !jumpPressed && lastInput[4];
+shootNewPress = shootPressed && !lastInput[5];
+shootReleased = !shootPressed && lastInput[5];
+selectPressed = selectPressed && !lastInput[6];
+xDir = rightPressed - leftPressed;

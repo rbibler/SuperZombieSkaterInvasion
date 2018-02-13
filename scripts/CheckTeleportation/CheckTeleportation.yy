@@ -1,8 +1,8 @@
 {
-    "id": "464258ab-3f17-42af-852c-7383fe387194",
+    "id": "d861ecb9-e0b2-4809-9f15-f59f063c4104",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "PlayerCheckInput",
+    "name": "CheckTeleportation",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -3,7 +3,7 @@
 
 
 
-PlayerCheckGrounded();
+CheckGrounded();
 
 if(!stopped)
 {
@@ -35,8 +35,8 @@ if(!stopped)
 }
 
 	
-PlayerCheckHBGCol();
-PlayerCheckVBGCol();
+CheckHBGCol();
+CheckVBGCol();
 	
 	
 y += ySpd;

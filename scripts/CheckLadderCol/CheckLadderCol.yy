@@ -1,8 +1,8 @@
 {
-    "id": "464258ab-3f17-42af-852c-7383fe387194",
+    "id": "6ad54af7-1693-441c-8fe0-3f0bbfcc1b0f",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "PlayerCheckInput",
+    "name": "CheckLadderCol",
     "IsCompatibility": false,
     "IsDnD": false
 }

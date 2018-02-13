@@ -1,32 +1,20 @@
 /// Updates the animation
-/// @arg downPressed
-/// @arg upPressed
-/// @arg left
-/// @arg right
-/// @arg shootPressed
-/// @arg shootReleased
 
-var downPressed = argument0;
-var upPressed = argument1;
-var left = argument2;
-var right = argument3;
-var shootPressed = argument4;
-var shootReleased = argument5;
 
 switch(state) 
 {
-	case SKATE_IDLE:
+	case IDLE:
 		if(left || right) 
 		{
-			state = SKATE_SKATING;
+			state = MOVING;
 			sprite_index = sSkater;
 		} else if(downPressed)
 		{
-			state = SKATE_CROUCH;
+			state = CROUCHING;
 			sprite_index = sSkaterCrouch;
-		} else if(shootPressed && PlayerCanShoot())
+		} else if(shootPressed && CanShoot())
 		{
-			state = SKATE_IDLE_WEAPON_DRAWN;
+			state = IDLE;
 			sprite_index = sSkaterSlingShotIdle;
 			
 		} else
@@ -34,24 +22,24 @@ switch(state)
 			sprite_index = sSkaterIdle;
 		}
 	break;
-	case SKATE_SKATING:
+	case MOVING:
 		if(downPressed)
 		{
-			state = SKATE_CROUCH;
+			state = CROUCHING;
 			sprite_index = sSkaterCrouch;
-		} else if(shootPressed && PlayerCanShoot())
+		} else if(shootPressed && CanShoot())
 		{
-			state = SKATE_SKATING_WEAPON_DRAWN;
+			state = MOVING;
 			var imgIndex = image_index;
 			sprite_index = sSkaterSlingShot;
 			image_index = (imgIndex + 1) % 2;
 		} else if(left + right == 0)
 		{
-			state = SKATE_IDLE;
+			state = IDLE;
 			sprite_index = sSkaterIdle;
 		}
 	break;
-	case SKATE_IDLE_WEAPON_DRAWN:
+	/*case SKATE_IDLE_WEAPON_DRAWN:
 	case SKATE_SKATING_WEAPON_DRAWN:
 	case SKATE_JUMPING_WEAPON_DRAWN:
 	case SKATE_FALLING_WEAPON_DRAWN:
@@ -75,16 +63,16 @@ switch(state)
 			state = SKATE_SKATING_WEAPON_DRAWN;
 			sprite_index = sSkaterSlingShot;
 		}
-	break;
-	case SKATE_JUMPING:
+	break;*/
+	case JUMPING:
 		if(grounded)
 		{
 			
 			if(left || right) {
-				state = SKATE_SKATING;
+				state = MOVING;
 				sprite_index = sSkater;
 			} else {
-				state = SKATE_IDLE;
+				state = IDLE;
 				sprite_index = sSkaterIdle;
 			}
 		} else 
@@ -95,26 +83,27 @@ switch(state)
 			}
 		}
 	break;
-	case SKATE_CROUCH:
+	case CROUCHING:
 		if(!downPressed)
 		{
 			if(left || right) {
-				state = SKATE_JUMPING;
+				state = JUMPING;
 				sprite_index = sSkater;
 			} else {
-				state = SKATE_IDLE;
+				state = IDLE;
 				sprite_index = sSkaterIdle;
 			}
 		}
 	break;
-	case SKATE_FALLING:
+	case FALLING:
+	case GLIDING:
 		if(grounded)
 		{
 			if(left || right) {
-				state = SKATE_SKATING;
+				state = MOVING;
 				sprite_index = sSkater;
 			} else {
-				state = SKATE_IDLE;
+				state = IDLE;
 				sprite_index = sSkaterIdle;
 			}
 		} else

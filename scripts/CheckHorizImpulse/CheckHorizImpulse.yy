@@ -1,8 +1,8 @@
 {
-    "id": "464258ab-3f17-42af-852c-7383fe387194",
+    "id": "91b0107a-a3a4-405f-b864-3a87df7aa9cc",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "PlayerCheckInput",
+    "name": "CheckHorizImpulse",
     "IsCompatibility": false,
     "IsDnD": false
 }
