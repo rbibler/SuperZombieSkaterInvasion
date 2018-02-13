@@ -4,7 +4,7 @@
 switch(state) 
 {
 	case IDLE:
-		if(left || right) 
+		if(leftPressed || rightPressed) 
 		{
 			state = MOVING;
 			sprite_index = sSkater;
@@ -33,7 +33,7 @@ switch(state)
 			var imgIndex = image_index;
 			sprite_index = sSkaterSlingShot;
 			image_index = (imgIndex + 1) % 2;
-		} else if(left + right == 0)
+		} else if(leftPressed + rightPressed == 0)
 		{
 			state = IDLE;
 			sprite_index = sSkaterIdle;
@@ -68,7 +68,7 @@ switch(state)
 		if(grounded)
 		{
 			
-			if(left || right) {
+			if(leftPressed || rightPressed) {
 				state = MOVING;
 				sprite_index = sSkater;
 			} else {
@@ -86,7 +86,7 @@ switch(state)
 	case CROUCHING:
 		if(!downPressed)
 		{
-			if(left || right) {
+			if(leftPressed || rightPressed) {
 				state = JUMPING;
 				sprite_index = sSkater;
 			} else {
@@ -99,7 +99,7 @@ switch(state)
 	case GLIDING:
 		if(grounded)
 		{
-			if(left || right) {
+			if(leftPressed || rightPressed) {
 				state = MOVING;
 				sprite_index = sSkater;
 			} else {

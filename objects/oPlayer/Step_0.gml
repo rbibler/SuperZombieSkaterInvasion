@@ -8,5 +8,3 @@ if(y >= (room_height + sprite_height))
 {
 	game_restart();
 }
-
-

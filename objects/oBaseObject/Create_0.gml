@@ -52,3 +52,4 @@ onPlatform = false;
 canGlide = false;
 
 checkInputScript = CheckInput;
+updateAnimationScript = EmptyScript;

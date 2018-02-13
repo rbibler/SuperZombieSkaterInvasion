@@ -70,5 +70,5 @@ var leftAxisVert = gamepad_axis_value(4, gp_axislv);
 //var rightAxisHoriz = gamepad_axis_value(4, gp_axisrh);
 //var rightAxisVert = gamepad_axis_value(4, gp_axisrv);
 
-show_debug_message("LH: " + string(leftAxisHoriz) + " LV: " + string(leftAxisVert));
+//show_debug_message("LH: " + string(leftAxisHoriz) + " LV: " + string(leftAxisVert));
 //show_debug_message("RH: " + string(rightAxisHoriz) + " RV: " + string(rightAxisVert));
