@@ -97,15 +97,26 @@ switch(state)
 	break;
 	case FALLING:
 	case GLIDING:
-		if(grounded)
-		{
-			if(leftPressed || rightPressed) {
+	if(grounded) {
+		if(leftPressed || rightPressed) {
 				state = MOVING;
 				sprite_index = sSkater;
 			} else {
 				state = IDLE;
 				sprite_index = sSkaterIdle;
 			}
+		} else {
+			if(sprite_index != sSkaterFall)
+			{
+				sprite_index = sSkaterFall;
+			}
+		}
+		break;
+	case SLAMMING:
+		if(grounded)
+		{
+			state = RECOVERING;
+			recoveryTimer = recoveryTime;
 		} else
 		{
 			if(sprite_index != sSkaterFall)

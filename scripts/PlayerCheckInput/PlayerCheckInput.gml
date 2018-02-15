@@ -27,7 +27,6 @@ if(deviceCount > 900) {
 	select = gamepad_button_check(4, gp_select);
 }
 
-
 input[0] = up;
 input[1] = down;
 input[2] = left;
@@ -37,13 +36,25 @@ input[5] = b;
 input[6] = b;
 
 
-upPressed = input[0];
-downPressed = input[1];
-leftPressed = input[2];
-rightPressed = input[3];
-jumpPressed = input[4];
-shootPressed = input[5];
-selectPressed = input[6];
+if(state != RECOVERING) {
+	upPressed = input[0];
+	downPressed = input[1];
+	leftPressed = input[2];
+	rightPressed = input[3];
+	jumpPressed = input[4];
+	shootPressed = input[5];
+	selectPressed = input[6];
+} else {
+	upPressed = 0;
+	downPressed = 0;
+	leftPressed = 0;
+	rightPressed = 0;
+	jumpPressed = 0;
+	shootPressed = 0;
+	selectPressed = 0;
+}
+
+
 
 // Process input
 

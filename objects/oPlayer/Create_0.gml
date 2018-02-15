@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 #macro SLAMMING 0x56
+#macro RECOVERING 0x57
 
 
 event_inherited();
@@ -110,6 +111,9 @@ canGlide = false;
 checkInputScript = PlayerCheckInput;
 checkVertImpulseScript = PlayerCheckVertImpulse;
 updateAnimationScript = PlayerUpdateAnimation;
+
+recoveryTimer = 0;
+recoveryTime = 30;
 
 #macro JUMP_TIMER_SLOW	16
 #macro JUMP_TIMER_FAST	28

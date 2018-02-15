@@ -8,3 +8,8 @@ lastInput[3] = input[3];
 lastInput[4] = input[4];
 lastInput[5] = input[5];
 lastInput[6] = input[6];
+
+wasGrounded = grounded;
+wasGroundedLeft = leftGrounded;
+wasGroundedRight = rightGrounded;
+wasGroundedMiddle = middleGrounded;

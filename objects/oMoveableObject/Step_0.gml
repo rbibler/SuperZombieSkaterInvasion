@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
+// check if on ground
+CheckGrounded();
 script_execute(checkInputScript);
 // Calculate our bounding box for use in collision detection
 var curBoxHalfWidth = (bbox_right - bbox_left) / 2;
@@ -20,8 +21,7 @@ image_blend = -1;
 
 fallTimerMax = FALL_TIMER_MAX;
 
-// check if on ground
-CheckGrounded();
+
 
 if(canTeleport) {
 	CheckTeleportation(selectPressed);

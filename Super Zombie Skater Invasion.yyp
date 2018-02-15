@@ -295,6 +295,14 @@
             }
         },
         {
+            "Key": "5490af29-e4d1-45b5-ba4b-6953512e83da",
+            "Value": {
+                "id": "5a87d6ff-94af-40b5-a7b4-ef6c62710af9",
+                "resourcePath": "scripts\\BadGuyAI\\BadGuyAI.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "594286f2-d6a8-4350-bde6-51b00d1125b4",
             "Value": {
                 "id": "cfbc84f7-26d8-4bdb-9032-5634ffa44c99",
@@ -813,6 +821,7 @@
         "88bef0ec-b8f3-4e16-a986-b76fe1384371",
         "c28dedb3-407c-4484-b5bc-0dd1be773720",
         "1fd66bdf-4c28-4e33-85ce-4bc734ea39ab",
+        "5490af29-e4d1-45b5-ba4b-6953512e83da",
         "86626fbd-c685-4e6f-b16a-a13565ac7541",
         "c1d37467-347e-4a23-8bb6-acd6b1187aaa",
         "91b0107a-a3a4-405f-b864-3a87df7aa9cc",

@@ -31,7 +31,14 @@ xFraction = 0;
 
 ySpd = 1;
 yFraction = 0;
+rightGrounded = false;
+middleGrounded = false;
+leftGrounded = false;
+wasGroundedRight = false;
+wasGroundedMiddle = false;
+wasGroundedLeft = false;
 grounded = false;
+wasGrounded = false;
 
 tilemap = layer_tilemap_get_id(layer_get_id("Collision"));
 ladderTiles = layer_tilemap_get_id(layer_get_id("Ladder_Tiles"));

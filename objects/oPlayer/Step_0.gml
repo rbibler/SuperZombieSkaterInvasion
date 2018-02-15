@@ -8,3 +8,10 @@ if(y >= (room_height + sprite_height))
 {
 	game_restart();
 }
+
+if(state == RECOVERING) {
+	recoveryTimer--;
+	if(recoveryTimer == 0) {
+		state = IDLE;
+	}
+}
