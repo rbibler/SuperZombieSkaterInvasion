@@ -34,3 +34,5 @@ fall_values[25] = 5.125;
 fall_values[26] = 5.125;
 fall_values[27] = 5.125;
 
+checkInputScript = EnemyCharFollowPlayer;
+

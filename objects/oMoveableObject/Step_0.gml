@@ -27,7 +27,8 @@ if(canTeleport) {
 	CheckTeleportation(selectPressed);
 }
 
-CheckVertImpulse(jumpPressed, jumpReleased, shootPressed);
+//CheckVertImpulse(jumpPressed, jumpReleased, shootPressed);
+script_execute(checkVertImpulseScript);
 
 // Check for horizontal impetus
 CheckHorizImpulse(xMax, xDir);

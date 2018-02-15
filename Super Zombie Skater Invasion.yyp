@@ -463,6 +463,14 @@
             }
         },
         {
+            "Key": "88bef0ec-b8f3-4e16-a986-b76fe1384371",
+            "Value": {
+                "id": "698000bc-9693-4ea8-ac0c-b107519d92ae",
+                "resourcePath": "scripts\\PlayerCheckVertImpulse\\PlayerCheckVertImpulse.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8d9771f9-9202-46b0-9e50-157fa515ed74",
             "Value": {
                 "id": "bede2123-8165-4a53-9d99-0f4a7d8c0bce",
@@ -802,6 +810,7 @@
     "script_order": [
         "638094ab-a58a-4fe0-ae4e-8d626e928878",
         "464258ab-3f17-42af-852c-7383fe387194",
+        "88bef0ec-b8f3-4e16-a986-b76fe1384371",
         "c28dedb3-407c-4484-b5bc-0dd1be773720",
         "1fd66bdf-4c28-4e33-85ce-4bc734ea39ab",
         "86626fbd-c685-4e6f-b16a-a13565ac7541",

@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+#macro SLAMMING 0x56
+
 
 event_inherited();
 teleportSpeedX = 10;
@@ -14,34 +16,34 @@ jumpCount = 0;
 ladderClimbSpeed = 2;
 onLadder = false;
 
-jump_heights[0] = -6.0;
-jump_heights[1] = -6.0;
-jump_heights[2] = -6.0;
-jump_heights[3] = -5.5;
-jump_heights[4] = -5.5;
-jump_heights[5] = -5.5;
-jump_heights[6] = -5.5;
-jump_heights[7] = -4.5;
-jump_heights[8] = -4.5;
-jump_heights[9] = -4.5;
-jump_heights[10] = -4.25;
-jump_heights[11] = -4.25;
-jump_heights[12] = -4.25;
-jump_heights[13] = -3.25;
-jump_heights[14] = -3.25;
-jump_heights[15] = -2.25;
-jump_heights[16] = -2.25;
-jump_heights[17] = -2.25;
-jump_heights[18] = -2.25;
-jump_heights[19] = -2.125;
-jump_heights[20] = -2.125;
-jump_heights[21] = -1.5;
-jump_heights[22] = -1.5;
-jump_heights[23] = -0.75;
-jump_heights[24] = -0.75;
-jump_heights[25] = -0.25;
-jump_heights[26] = -0.25;
-jump_heights[27] = -0.25;
+jump_heights[0] = -5.0;
+jump_heights[1] = -5.0;
+jump_heights[2] = -5.0;
+jump_heights[3] = -4.5;
+jump_heights[4] = -4.5;
+jump_heights[5] = -4.5;
+jump_heights[6] = -4.5;
+jump_heights[7] = -3.5;
+jump_heights[8] = -3.5;
+jump_heights[9] = -3.5;
+jump_heights[10] = -3.25;
+jump_heights[11] = -3.25;
+jump_heights[12] = -3.25;
+jump_heights[13] = -2.25;
+jump_heights[14] = -2.25;
+jump_heights[15] = -1.25;
+jump_heights[16] = -1.25;
+jump_heights[17] = -1.25;
+jump_heights[18] = -1.25;
+jump_heights[19] = -1.125;
+jump_heights[20] = -1.125;
+jump_heights[21] = -0.5;
+jump_heights[22] = -0.5;
+jump_heights[23] = -0.25;
+jump_heights[24] = -0.25;
+jump_heights[25] = -0.125;
+jump_heights[26] = -0.125;
+jump_heights[27] = -0.125;
 
 fall_values[0] = 0.5;
 fall_values[1] = 0.75;
@@ -103,9 +105,10 @@ glide_values[26] = 5.125;
 glide_values[27] = 5.125;
 
 platformObject = pointer_null;
-canGlide = true;
+canGlide = false;
 
 checkInputScript = PlayerCheckInput;
+checkVertImpulseScript = PlayerCheckVertImpulse;
 updateAnimationScript = PlayerUpdateAnimation;
 
 #macro JUMP_TIMER_SLOW	16

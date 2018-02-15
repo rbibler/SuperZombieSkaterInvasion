@@ -141,3 +141,5 @@ if(image_xscale == 0)
 	image_xscale = lastDir;
 }
 lastDir = image_xscale;
+image_xscale *= 0.75;
+image_yscale = 0.75;

@@ -37,3 +37,5 @@ jumpReleased = 0;
 shootReleased = 0;
 selectReleased = 0;
 xDir = 0;
+
+checkVertImpulseScript = CheckVertImpulse;

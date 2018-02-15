@@ -1,11 +1,8 @@
 /// Checks to see if player is jumping or falling and adds to vert speed accoridngly
-/// @arg jumpPressed
-/// @arg sprintPressed
 
 
-var jumpPressed = argument0;
-var jumpReleased = argument1;
-var sprintPressed = argument2;
+
+
 
 if(state == TELEPORTING) {
 	ySpd = sign(targetY - y) * teleportSpeedY;
@@ -22,7 +19,7 @@ if(state == TELEPORTING) {
 			grounded = false;
 			state = JUMPING;
 			ySpd = jump_heights[jumpTimer++];
-			if(sprintPressed && abs(xSpd) > 0) {
+			if(shootPressed && abs(xSpd) > 0) {
 				jumpTimerMax = JUMP_TIMER_FAST;
 			} else {
 				jumpTimerMax = JUMP_TIMER_SLOW;
@@ -46,7 +43,7 @@ if(state == TELEPORTING) {
 					glideTimer = glideTimerMax - 1;
 				}
 			}
-		} else if(state != CLIMBING) {
+		} else if(state != CLIMBING && state != SLAMMING) {
 			state = FALLING;
 		}
 	}

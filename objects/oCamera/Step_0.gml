@@ -1,7 +1,7 @@
 
 var leftDiff = follow.x - bbox_left;
 var rightDiff = follow.x - bbox_right;
-var topDiff = follow.y - bbox_top;
+var topDiff = follow.bbox_top - bbox_top;
 var bottomDiff = follow.y - bbox_bottom;
 
 var xTo = x;
@@ -29,16 +29,16 @@ y += (yTo - y) / followSpeed;
 
 
 var camFinalX = x - boundBoxOffsetX;
-var camFinalY = y - 25;
+var camFinalY = y - boundBoxOffsetY;
 
 if(camFinalY >= (room_height - viewH)) {
 	camFinalY = (room_height - viewH);
-	y = camFinalY + 25;
+	y = camFinalY + boundBoxOffsetY;
 }
 
 if(camFinalY < 0) {
 	camFinalY = 0;
-	y = camFinalY + 25;
+	y = camFinalY + boundBoxOffsetY;
 }
 
 if(camFinalX < 0) {
