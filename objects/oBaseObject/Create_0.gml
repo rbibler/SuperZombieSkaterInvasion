@@ -22,11 +22,7 @@ state = IDLE;
 lastState = -1;
 canShoot = true;
 
-
-normalXMax = 3.5;
-sprintXMax = 4.5;
 xSpd = 0;
-xAccel = 0.2;
 xFraction = 0;
 
 ySpd = 1;
