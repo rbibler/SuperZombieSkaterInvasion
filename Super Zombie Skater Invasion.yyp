@@ -335,6 +335,14 @@
             }
         },
         {
+            "Key": "5ed4d098-7b89-4e2b-9aeb-30e4cd644b74",
+            "Value": {
+                "id": "322f299d-f9fc-4074-9c9f-cc20e11d078b",
+                "resourcePath": "objects\\oSylvesterSlime\\oSylvesterSlime.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5f0a6d9e-89ae-415d-92d5-ebec889ed5e0",
             "Value": {
                 "id": "72236b3f-a9fc-4db8-93c3-10a018605267",
@@ -708,6 +716,14 @@
                 "id": "46444ccf-85d0-48d9-8ceb-f379525ab155",
                 "resourcePath": "objects\\oTeleporterBall\\oTeleporterBall.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d701715c-6bc8-444c-a6f5-a7b5ced3a198",
+            "Value": {
+                "id": "31d4564e-c3b9-4219-b722-48766c72facc",
+                "resourcePath": "sprites\\sSylvesterSlime\\sSylvesterSlime.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

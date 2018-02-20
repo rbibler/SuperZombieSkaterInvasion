@@ -35,6 +35,7 @@ wasGroundedMiddle = false;
 wasGroundedLeft = false;
 grounded = false;
 wasGrounded = false;
+framesSinceGround = 0;
 
 tilemap = layer_tilemap_get_id(layer_get_id("Collision"));
 ladderTiles = layer_tilemap_get_id(layer_get_id("Ladder_Tiles"));

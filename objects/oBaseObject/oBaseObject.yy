@@ -73,6 +73,34 @@
             "value": "0.2",
             "varName": "xAccel",
             "varType": 0
+        },
+        {
+            "id": "9de29ef0-d94a-428a-8514-b86192227d2e",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "jumpLeeway",
+            "varType": 0
+        },
+        {
+            "id": "fee90606-e0fc-4ea1-b8bf-0ae4a842302c",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "variable_name",
+            "varType": 0
         }
     ],
     "solid": false,

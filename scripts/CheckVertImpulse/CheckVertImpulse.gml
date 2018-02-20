@@ -9,14 +9,12 @@ if(state == TELEPORTING) {
 } else {
 
 	// Check for vertical impetus (i.e. jumping)
-	if(grounded || onPlatform) {
-		//show_debug_message("Grounded or on platform");
-		// Not jumping or falling, so reset timers
-		jumpTimer = 0;
-		fallTimer = 0;
-		glideTimer = 0;
+	if(framesSinceGround <= jumpLeeway) {
 		if(CanJump(jumpPressed)) {
 			grounded = false;
+			rightGrounded = false;
+			middleGrounded = false;
+			leftGrounded = false;
 			state = JUMPING;
 			ySpd = jump_heights[jumpTimer++];
 			if(shootPressed && abs(xSpd) > 0) {
@@ -25,8 +23,16 @@ if(state == TELEPORTING) {
 				jumpTimerMax = JUMP_TIMER_SLOW;
 			}
 		}
+	}
+	if(grounded || onPlatform) {
+		//show_debug_message("Grounded or on platform");
+		// Not jumping or falling, so reset timers
+		jumpTimer = 0;
+		fallTimer = 0;
+		glideTimer = 0;
+		framesSinceGround = 0;
 	} else {
-		//show_debug_message("not grounded and not on platform");
+		framesSinceGround++;
 		onPlatform = false;
 		if(state == JUMPING) {
 			if(jumpTimer >= jumpTimerMax || !jumpPressed) {
