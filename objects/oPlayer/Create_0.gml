@@ -105,6 +105,11 @@ glide_values[25] = 5.125;
 glide_values[26] = 5.125;
 glide_values[27] = 5.125;
 
+jumpTimerMax = array_length_1d(jump_heights);
+fallTimerMax = array_length_1d(fall_values);
+jumpTimerFast = jumpTimerMax;
+jumpTimerSlow = 16;
+
 platformObject = pointer_null;
 canGlide = false;
 

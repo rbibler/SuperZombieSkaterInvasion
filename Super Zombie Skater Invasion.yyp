@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "3d9a4988-ae13-4d25-bb66-632c267e9849",
+            "Value": {
+                "id": "a53047cc-7b3a-44df-8953-e49faedcc5e1",
+                "resourcePath": "scripts\\SylvesterSlimeAnimation\\SylvesterSlimeAnimation.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3e92550c-4860-48b2-9890-4202a0c510ae",
             "Value": {
                 "id": "d02c1827-94f8-4412-be3d-0f2e05b54ac5",
@@ -260,6 +268,14 @@
                 "id": "597fcac4-053e-4043-b54d-108ad14ae732",
                 "resourcePath": "views\\4f33409e-8e18-4d67-9773-29d48d61b3c8.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4f8f93c0-a93a-4957-8f10-4d57f8efb2cc",
+            "Value": {
+                "id": "e45f72e7-91a0-477a-b7ab-1c03a0524303",
+                "resourcePath": "scripts\\SylvesterSlimeAI\\SylvesterSlimeAI.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -599,14 +615,6 @@
             }
         },
         {
-            "Key": "b4e5c5cc-010b-4745-94f9-1cfb36f1259f",
-            "Value": {
-                "id": "d522b754-1255-4566-bf17-1dea90dab3ab",
-                "resourcePath": "objects\\oJumper\\oJumper.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "b610845f-7869-49a8-bd9c-65db1d313222",
             "Value": {
                 "id": "b6837f56-8155-4efc-91d1-69726bc6d38f",
@@ -838,6 +846,8 @@
         "c28dedb3-407c-4484-b5bc-0dd1be773720",
         "1fd66bdf-4c28-4e33-85ce-4bc734ea39ab",
         "5490af29-e4d1-45b5-ba4b-6953512e83da",
+        "3d9a4988-ae13-4d25-bb66-632c267e9849",
+        "4f8f93c0-a93a-4957-8f10-4d57f8efb2cc",
         "86626fbd-c685-4e6f-b16a-a13565ac7541",
         "c1d37467-347e-4a23-8bb6-acd6b1187aaa",
         "91b0107a-a3a4-405f-b864-3a87df7aa9cc",

@@ -18,6 +18,15 @@
 #macro TELEPORTING	0x3234
 
 
+
+#macro UP_INPUT		0
+#macro DOWN_INPUT	1
+#macro LEFT_INPUT	2
+#macro RIGHT_INPUT	3
+#macro JUMP_INPUT	4
+#macro SHOOT_INPUT	5
+
+
 state = IDLE;
 lastState = -1;
 canShoot = true;
@@ -36,6 +45,7 @@ wasGroundedLeft = false;
 grounded = false;
 wasGrounded = false;
 framesSinceGround = 0;
+framesOnGround = 0;
 
 tilemap = layer_tilemap_get_id(layer_get_id("Collision"));
 ladderTiles = layer_tilemap_get_id(layer_get_id("Ladder_Tiles"));
@@ -43,7 +53,6 @@ ladderTiles = layer_tilemap_get_id(layer_get_id("Ladder_Tiles"));
 lastDir = 1;
 
 jumpTimer = 0;
-jumpTimerMax = 0;
 
 fallTimer = 0;
 fallTimerMax = 0;

@@ -18,9 +18,9 @@ if(state == TELEPORTING) {
 			state = JUMPING;
 			ySpd = jump_heights[jumpTimer++];
 			if(shootPressed && abs(xSpd) > 0) {
-				jumpTimerMax = JUMP_TIMER_FAST;
+				jumpTimerMax = jumpTimerFast;
 			} else {
-				jumpTimerMax = JUMP_TIMER_SLOW;
+				jumpTimerMax = jumpTimerSlow;
 			}
 		}
 	}
@@ -31,8 +31,10 @@ if(state == TELEPORTING) {
 		fallTimer = 0;
 		glideTimer = 0;
 		framesSinceGround = 0;
+		framesOnGround++;
 	} else {
 		framesSinceGround++;
+		framesOnGround = 0;
 		onPlatform = false;
 		if(state == JUMPING) {
 			if(jumpTimer >= jumpTimerMax || !jumpPressed) {
