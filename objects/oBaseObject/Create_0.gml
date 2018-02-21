@@ -21,6 +21,8 @@
 
 #macro FRAMES_PER_SECOND	60
 
+#macro FROZEN 0x309
+
 
 #macro UP_INPUT		0
 #macro DOWN_INPUT	1

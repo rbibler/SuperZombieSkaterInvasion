@@ -24,6 +24,31 @@ switch(state) {
 			image_index = 0;
 		}
 	break;
+	case CHOMPING:
+		if(eventTimer <= 0) {
+			eventTimer = swallowingFrames;
+			state = SWALLOWING;
+		}
+		image_index = 5;
+	break;
+	case SWALLOWING:
+		image_index = 7;
+		if(eventTimer <= 0) {
+			eventTimer = explodingFrames;
+			state = EXPLODING;
+		}
+	break;
+	case EXPLODING:
+	image_index = 6;
+		if(eventTimer <= 0) {
+			instance_destroy();
+			with(oPlayer) {
+				state = IDLE;
+				immune = false;
+				image_speed = 1;
+			}
+		}
+	break;
 }
 
 image_xscale = sign(xSpd);

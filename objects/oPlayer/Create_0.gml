@@ -14,6 +14,7 @@ immunityFlashValues[0] = c_aqua;
 immunityFlashValues[1] = c_red;
 immunityFlashValues[2] = c_blue;
 immunityFlashValues[3] = c_yellow;
+frozenIndex = 0;
 frameCounter = 0;
 teleportSpeedX = 10;
 teleportSpeedY = 10;

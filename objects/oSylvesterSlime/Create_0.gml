@@ -2,7 +2,18 @@
 // You can write your code in this editor
 
 // Inherit the parent event
+
+
 event_inherited();
+CHOMPING = 4;
+SWALLOWING = 5;
+EXPLODING = 6;
+
+
+chompFrames = 10;
+swallowingFrames = 30;
+explodingFrames = 10;
+eventTimer = 0;
 
 checkInputScript = SylvesterSlimeAI;
 updateAnimationScript = SylvesterSlimeAnimation;

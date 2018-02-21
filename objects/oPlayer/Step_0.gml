@@ -10,6 +10,10 @@ if(infected) {
 		lastEpisodeTime = frameCounter;
 	}
 }
+
+if(state == FROZEN) {
+	return;
+}
 event_inherited();
 
 if(y >= (room_height + sprite_height))
