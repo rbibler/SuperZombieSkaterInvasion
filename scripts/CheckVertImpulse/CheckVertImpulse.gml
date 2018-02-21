@@ -60,8 +60,8 @@ if(state == TELEPORTING) {
 			state = GLIDING;
 		} else {
 			ySpd = fall_values[fallTimer++];
-			if(fallTimer >= FALL_TIMER_MAX) {
-				fallTimer = FALL_TIMER_MAX - 1;
+			if(fallTimer >= fallTimerMax) {
+				fallTimer = fallTimerMax - 1;
 			}
 		}
 	}

@@ -19,7 +19,7 @@ if(shootPressed)
 
 image_blend = -1;
 
-fallTimerMax = FALL_TIMER_MAX;
+
 
 
 

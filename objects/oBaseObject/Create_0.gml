@@ -17,6 +17,9 @@
 
 #macro TELEPORTING	0x3234
 
+#macro JUMP_PREP	0x765
+
+#macro FRAMES_PER_SECOND	60
 
 
 #macro UP_INPUT		0

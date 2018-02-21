@@ -5,6 +5,16 @@
 
 
 event_inherited();
+health = 100;
+immune = false;
+immunityFlashToggle = 0;
+immunityFlashSwitchTime = 0.075 * FRAMES_PER_SECOND;
+lastImmunityFlashSwitch = 0;
+immunityFlashValues[0] = c_aqua;
+immunityFlashValues[1] = c_red;
+immunityFlashValues[2] = c_blue;
+immunityFlashValues[3] = c_yellow;
+frameCounter = 0;
 teleportSpeedX = 10;
 teleportSpeedY = 10;
 teleportSpeedMax = 10;
@@ -119,6 +129,12 @@ updateAnimationScript = PlayerUpdateAnimation;
 
 recoveryTimer = 0;
 recoveryTime = 30;
+
+infected = false;
+infectionTime = 0;
+infectionVirulence = 0;
+lastEpisodeTime = 0;
+
 
 #macro JUMP_TIMER_SLOW	16
 #macro JUMP_TIMER_FAST	28

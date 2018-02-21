@@ -1,11 +1,21 @@
 if(state == MOVING) {
 	script_execute(BadGuyAI);
+} else if(state == JUMP_PREP) {
+	if(jumpPrepCounter <= 0) {
+		input[JUMP_INPUT] = 1;
+	} else {
+		jumpPrepCounter--;
+	}
 }
-if(framesOnGround >= 100) {
-	input[JUMP_INPUT] = 1;
+if(framesOnGround >= 100 && state != JUMP_PREP) {
+	state = JUMP_PREP;
 	xSpd = 0;
 	xFraction = 0;
+	xDirAtJump = xDir;
+	xDir = 0;
+	jumpPrepCounter = jumpPrepLength;
 }
+
 
 upPressed = input[0];
 downPressed = input[1];
