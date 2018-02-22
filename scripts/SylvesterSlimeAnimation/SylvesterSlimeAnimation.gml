@@ -28,32 +28,62 @@ switch(state) {
 		if(eventTimer <= 0) {
 			eventTimer = swallowingFrames;
 			state = SWALLOWING;
+			lastEventTime = eventTimer;
+			x = oPlayer.x;
+			y = oPlayer.y;
+			with(oPlayer) {
+				visible = false;
+			}
 		}
-		image_index = 5;
+		if(eventTimer >= chompFrames / 2) {
+			image_index = 5;
+		} else {
+			image_index = 6;
+		}
 	break;
 	case SWALLOWING:
-		image_index = 7;
 		if(eventTimer <= 0) {
 			eventTimer = explodingFrames;
 			state = EXPLODING;
+			lastEventTime = eventTimer;
+		}
+		if(eventTimer >= swallowingFrames / 2) {
+			image_index = 7;
+		} else {
+			image_index = 8;
+		}
+		var wobbleTime = lastEventTime - eventTimer;
+		if(wobbleTime >= swallowWobbleFrames) {
+			lastEventTime = eventTimer;
+			x += wobbleToggle;
+			wobbleToggle = -wobbleToggle;
 		}
 	break;
 	case EXPLODING:
-	image_index = 6;
+		var wobbleTime = lastEventTime - eventTimer;
+		if(wobbleTime >= swallowWobbleFrames) {
+			lastEventTime = eventTimer;
+			x += wobbleToggle;
+			
+			wobbleToggle = -wobbleToggle;
+		}
 		if(eventTimer <= 0) {
 			instance_destroy();
 			with(oPlayer) {
 				state = IDLE;
 				immune = false;
 				image_speed = 1;
+				xDir = -1;
+				visible = true;
 			}
 		}
 	break;
 }
 
-image_xscale = sign(xSpd);
-if(image_xscale == 0) 
-{
-	image_xscale = lastDir;
+if(state == MOVING || state == JUMPING || state == JUMP_PREP) {
+	image_xscale = sign(xSpd);
+	if(image_xscale == 0) {
+		image_xscale = lastDir;
+	}
+	lastDir = image_xscale;
 }
-lastDir = image_xscale;

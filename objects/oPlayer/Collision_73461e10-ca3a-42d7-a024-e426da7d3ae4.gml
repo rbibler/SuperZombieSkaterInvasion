@@ -1,7 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(state == SLAMMING || (state == RECOVERING)) {
+	state = BOUNCING;
+	return;
+}
 
-if(!immune && state != FROZEN) {
+
+if(!immune && state != FROZEN && state != BOUNCING) {
 	state = FROZEN;
 	health -= other.hitPower;
 	show_debug_message("Hit! Health: " + string(health));
@@ -14,10 +19,13 @@ if(!immune && state != FROZEN) {
 	//y -= 5;
 	image_speed = 0;
 	with(other) {
+		image_xscale = sign(x - other.x);
 		xDir = 0;
+		xSpd = 0;
+		ySpd = 0;
+		xFraction = 0;
+		yFraction = 0;
 		state = CHOMPING;
 		eventTimer = chompFrames;
-		x = other.x;
-		y = other.y;
 	}
 }

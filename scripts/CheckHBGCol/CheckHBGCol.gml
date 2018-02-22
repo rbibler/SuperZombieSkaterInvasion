@@ -12,12 +12,5 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1)
 
 if((tileIndexTop == 1 || tileIndexBottom == 1 || tileIndexMiddle == 1) && state != CLIMBING)
 {
-	if(xSpd >= 0) 
-	{
-		x = x - (x % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_right - x);
-	} else
-	{
-		x = x - (x % TILE_SIZE) - (bbox_left - x);
-	}
-	xSpd = 0;
+	script_execute(hbgColResponseScript);
 }

@@ -20,7 +20,8 @@
         "26df12a1-f2aa-45be-baa3-89c0fad98406",
         "42056e78-7455-4755-b5bd-41fd5257466b",
         "cb730e1e-df0d-41ca-a6cd-5546bf6676a1",
-        "95840acd-bec4-41c1-9432-cd7921eaaffd"
+        "95840acd-bec4-41c1-9432-cd7921eaaffd",
+        "58cd226a-4238-440e-976f-391c8924b0cb"
     ],
     "filterType": "GMScript",
     "folderName": "CharacterUpdateScripts",

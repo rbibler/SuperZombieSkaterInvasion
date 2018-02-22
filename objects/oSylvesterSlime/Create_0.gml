@@ -12,8 +12,14 @@ EXPLODING = 6;
 
 chompFrames = 10;
 swallowingFrames = 30;
-explodingFrames = 10;
+explodingFrames = 16;
 eventTimer = 0;
+lastEventTime = 0;
+explodeWobbleFrames = 4;
+swallowWobbleFrames = 4;
+wobbleToggle = 1;
+
+jumpTime = random_range(150,350);
 
 checkInputScript = SylvesterSlimeAI;
 updateAnimationScript = SylvesterSlimeAnimation;

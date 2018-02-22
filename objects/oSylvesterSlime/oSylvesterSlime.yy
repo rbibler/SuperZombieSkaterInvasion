@@ -23,10 +23,29 @@
             "enumb": 2,
             "eventtype": 3,
             "m_owner": "5ed4d098-7b89-4e2b-9aeb-30e4cd644b74"
+        },
+        {
+            "id": "98885b4d-eb69-4f0b-9b20-4428177444eb",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "5ed4d098-7b89-4e2b-9aeb-30e4cd644b74"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
-    "overriddenProperties": null,
+    "overriddenProperties": [
+        {
+            "id": "66fc0b7e-0b37-4623-aeb9-499788658a2d",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",
+            "propertyId": "c62b6ec9-0f6a-4a3c-b387-8b17178e75a2",
+            "value": "SylvesterSlimeHBGColResponseScript"
+        }
+    ],
     "parentObjectId": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",
     "persistent": false,
     "physicsAngularDamping": 0.1,

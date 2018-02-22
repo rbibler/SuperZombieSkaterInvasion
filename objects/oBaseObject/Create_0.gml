@@ -23,6 +23,8 @@
 
 #macro FROZEN 0x309
 
+#macro BOUNCING 0x34
+
 
 #macro UP_INPUT		0
 #macro DOWN_INPUT	1

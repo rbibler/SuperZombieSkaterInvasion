@@ -7,7 +7,7 @@ if(state == MOVING) {
 		jumpPrepCounter--;
 	}
 }
-if(framesOnGround >= 100 && state == MOVING) {
+if(framesOnGround >= jumpTime && state == MOVING) {
 	state = JUMP_PREP;
 	xSpd = 0;
 	xFraction = 0;
