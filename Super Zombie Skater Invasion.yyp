@@ -655,6 +655,14 @@
             }
         },
         {
+            "Key": "be07f00f-8383-4157-b0d1-96c14998e237",
+            "Value": {
+                "id": "caef8541-8196-4dab-87e3-fe2668a9029c",
+                "resourcePath": "sprites\\sSkaterSlam\\sSkaterSlam.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c0fea08a-66e2-41e1-ae5c-ed701f6c610e",
             "Value": {
                 "id": "a34c021c-8d8b-44a5-9f50-21011fcaaff6",

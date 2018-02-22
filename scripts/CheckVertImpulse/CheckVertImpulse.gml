@@ -1,9 +1,4 @@
 /// Checks to see if player is jumping or falling and adds to vert speed accoridngly
-
-
-
-
-
 if(state == TELEPORTING) {
 	ySpd = sign(targetY - y) * teleportSpeedY;
 } else {

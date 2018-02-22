@@ -113,18 +113,21 @@ switch(state)
 		}
 		break;
 	case SLAMMING:
-		if(grounded)
-		{
+		if(sprite_index != sSkaterSlam) {
+				sprite_index = sSkaterSlam;
+		}
+		if(grounded) {
 			state = RECOVERING;
 			recoveryTimer = recoveryTime;
-		} else
-		{
-			if(sprite_index != sSkaterFall)
-			{
-				sprite_index = sSkaterFall;
-			}
 		}
+		image_index = 0;
 	break;
+	case RECOVERING:
+		if(sprite_index != sSkaterSlam) {
+			sprite_index = sSkaterSlam;
+		}
+		image_index = 0;
+		break;
 	case CLIMBING:
 		if(sprite_index != sSkaterClimb)
 		{

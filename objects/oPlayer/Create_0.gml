@@ -28,11 +28,11 @@ jumpCount = 0;
 ladderClimbSpeed = 2;
 onLadder = false;
 
-jump_heights[0] = -5.0;
-jump_heights[1] = -5.0;
-jump_heights[2] = -5.0;
-jump_heights[3] = -4.5;
-jump_heights[4] = -4.5;
+jump_heights[0] = -7.5;
+jump_heights[1] = -7.0;
+jump_heights[2] = -6.5;
+jump_heights[3] = -6.0;
+jump_heights[4] = -5.5;
 jump_heights[5] = -4.5;
 jump_heights[6] = -4.5;
 jump_heights[7] = -3.5;
@@ -53,9 +53,6 @@ jump_heights[21] = -0.5;
 jump_heights[22] = -0.5;
 jump_heights[23] = -0.25;
 jump_heights[24] = -0.25;
-jump_heights[25] = -0.125;
-jump_heights[26] = -0.125;
-jump_heights[27] = -0.125;
 
 fall_values[0] = 0.5;
 fall_values[1] = 0.75;
@@ -135,8 +132,3 @@ infected = false;
 infectionTime = 0;
 infectionVirulence = 0;
 lastEpisodeTime = 0;
-
-
-#macro JUMP_TIMER_SLOW	16
-#macro JUMP_TIMER_FAST	28
-#macro FALL_TIMER_MAX	28

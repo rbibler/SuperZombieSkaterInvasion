@@ -1,7 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(state == SLAMMING || (state == RECOVERING)) {
-	state = BOUNCING;
+if(state == SLAMMING) {
+	with(other) {
+		xDir = sign(x - other.x);
+		if(xDir == 0) {
+			xDir = 1;
+		}
+		xSpd = 15 * xDir;
+	}
 	return;
 }
 
