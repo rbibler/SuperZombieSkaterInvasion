@@ -623,6 +623,14 @@
             }
         },
         {
+            "Key": "abde01dc-1bb5-4a1a-b8b4-dd518c5779ee",
+            "Value": {
+                "id": "aa108e73-93d8-4145-b0ee-3e1e436011c3",
+                "resourcePath": "scripts\\SpawnSlyvester\\SpawnSlyvester.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b1237aa5-bdc3-48be-9f46-46e7f7bddac1",
             "Value": {
                 "id": "b938888d-b1d2-4845-b0f0-9ceb58b4b629",
@@ -660,6 +668,14 @@
                 "id": "caef8541-8196-4dab-87e3-fe2668a9029c",
                 "resourcePath": "sprites\\sSkaterSlam\\sSkaterSlam.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c087aead-f0c0-4322-a7cd-83d1d22da926",
+            "Value": {
+                "id": "645bc352-47ab-4b43-b40a-6d8c93780d0a",
+                "resourcePath": "objects\\oSylBlock\\oSylBlock.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -799,6 +815,14 @@
             }
         },
         {
+            "Key": "ec204795-713a-4425-8238-fe70568d624f",
+            "Value": {
+                "id": "676d84b1-3beb-42e1-a574-784abfc5ae99",
+                "resourcePath": "sprites\\sSylBlock\\sSylBlock.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f03624e7-9a0d-45ff-a8a2-6778aa3e1d8a",
             "Value": {
                 "id": "788564ef-37b9-4c1b-9eff-877b766fdf5b",
@@ -889,6 +913,7 @@
         "3d9a4988-ae13-4d25-bb66-632c267e9849",
         "4f8f93c0-a93a-4957-8f10-4d57f8efb2cc",
         "5ae5d117-5105-4642-813b-80c7ea05a082",
+        "abde01dc-1bb5-4a1a-b8b4-dd518c5779ee",
         "86626fbd-c685-4e6f-b16a-a13565ac7541",
         "c1d37467-347e-4a23-8bb6-acd6b1187aaa",
         "91b0107a-a3a4-405f-b864-3a87df7aa9cc",
