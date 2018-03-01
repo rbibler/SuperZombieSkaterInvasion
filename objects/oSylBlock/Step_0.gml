@@ -1,14 +1,26 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(!willPop || isExploded) {
+	return;
+}
 
-frameCount++;
-if(frameCount - lastCheckTime >= 30) {
-	lastCheckTime = frameCount;
-	var chance = random_range(0, 100);
-	if(chance < probability) {
-		if(!isExploded) {
+if(!isTriggered) {
+	if(playerTrigger) {
+		if(on_screen()) {
+			isTriggered = abs(oPlayer.x - x) <= 25;
+		}
+	} else {
+		isTriggered = on_screen();
+	}
+} else {
+	if(frameCount - lastCheckTime >= 60) {
+		lastCheckTime = frameCount;
+		seconds++;
+		if(seconds >= timeTillPop) {
 			isExploded = true;
 			SpawnSlyvester();
 		}
 	}
 }
+
+frameCount++;

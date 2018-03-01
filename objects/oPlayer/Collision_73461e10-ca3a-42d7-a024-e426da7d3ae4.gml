@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(state == SLAMMING) {
+if(state == SLAMMING || (state == RECOVERING && recoveryTimer >= 10)) {
 	with(other) {
 		xDir = sign(x - other.x);
 		if(xDir == 0) {

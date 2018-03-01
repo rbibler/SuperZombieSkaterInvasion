@@ -21,7 +21,7 @@ if(spawnDir == 1) {
 	sylXDirGround = initialDirection;
 	yLocation = y + 16;
 } else {
-	sylvester.state = MOVING;
+	sylState = MOVING;
 	sylXDir = initialDirection;
 	sylXDirGround = sylXDir;
 }
