@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "01c4b9b5-d6ac-4745-94e8-a0fc83705027",
+            "Value": {
+                "id": "8133b1fb-18c3-4a6e-bda1-4bd7b8167403",
+                "resourcePath": "views\\01c4b9b5-d6ac-4745-94e8-a0fc83705027.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "05b715c1-cc02-416f-b736-b23c2674e412",
             "Value": {
                 "id": "25f54068-ed26-4e87-aa99-69b60b1798ea",
@@ -423,6 +431,14 @@
             }
         },
         {
+            "Key": "6330b6ab-1b87-4cde-91f6-ff06753b4af5",
+            "Value": {
+                "id": "e62fdc78-e0c4-4c7a-8757-24278918b7a8",
+                "resourcePath": "objects\\oWeaponBoardSwing\\oWeaponBoardSwing.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "638094ab-a58a-4fe0-ae4e-8d626e928878",
             "Value": {
                 "id": "b70ffac0-0b62-465e-b023-0839a57241d9",
@@ -468,6 +484,14 @@
                 "id": "8b98a368-6080-4ee4-b392-33fcc9a057de",
                 "resourcePath": "scripts\\CheckVPlatformCol\\CheckVPlatformCol.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6bc5abb6-36c1-4c53-ada1-e893441ce031",
+            "Value": {
+                "id": "11f376aa-8309-465c-bb66-97e062b0f877",
+                "resourcePath": "objects\\oWeaponSlingshot\\oWeaponSlingshot.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -599,14 +623,6 @@
             }
         },
         {
-            "Key": "9cde283e-73a1-4a04-a3ac-0164d05778c8",
-            "Value": {
-                "id": "85133caa-7417-4f2a-b460-cce16fdd36a9",
-                "resourcePath": "objects\\oWeapon\\oWeapon.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "9f34a0be-f009-47c4-9d90-1dce69f99786",
             "Value": {
                 "id": "e5e2a7a5-dbd2-4ab2-b6d2-e4cc0b892713",
@@ -647,6 +663,14 @@
             }
         },
         {
+            "Key": "ae90a4f3-66f1-4716-a012-983be7591d2f",
+            "Value": {
+                "id": "7efadeb2-5c0d-40d1-be5b-9c0b10df5c71",
+                "resourcePath": "objects\\oWeaponZombieGun\\oWeaponZombieGun.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b1237aa5-bdc3-48be-9f46-46e7f7bddac1",
             "Value": {
                 "id": "b938888d-b1d2-4845-b0f0-9ceb58b4b629",
@@ -663,6 +687,14 @@
             }
         },
         {
+            "Key": "b405efb2-fc36-4cc9-9021-824dd5f63cdd",
+            "Value": {
+                "id": "ad1be531-ad1c-42aa-bb49-5722389de623",
+                "resourcePath": "objects\\oWeaponPistol\\oWeaponPistol.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b610845f-7869-49a8-bd9c-65db1d313222",
             "Value": {
                 "id": "b6837f56-8155-4efc-91d1-69726bc6d38f",
@@ -676,6 +708,14 @@
                 "id": "25a4488f-531d-4ba5-ae10-ee160f2c4f19",
                 "resourcePath": "sprites\\sSkaterFall\\sSkaterFall.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bd7c759e-fc30-4887-a128-c9ed2d640557",
+            "Value": {
+                "id": "9a4bea3e-18d2-4b3f-9d36-e4e098da272d",
+                "resourcePath": "objects\\oWeaponBoardBoomarang\\oWeaponBoardBoomarang.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -716,6 +756,14 @@
                 "id": "c6ba9db8-2a4a-4097-adb9-1a254c320440",
                 "resourcePath": "scripts\\EnemyCharFollowPlayer\\EnemyCharFollowPlayer.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c348860e-0ae2-48bb-a579-858569e897f9",
+            "Value": {
+                "id": "86504dd4-c773-4e7d-9c2d-bcd710663599",
+                "resourcePath": "objects\\oWeaponRifle\\oWeaponRifle.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -911,6 +959,22 @@
             }
         },
         {
+            "Key": "f94dfb01-eb41-4ff5-bc0b-b14578b58a4b",
+            "Value": {
+                "id": "ec49c80e-d971-4297-9916-de3b9122ab59",
+                "resourcePath": "objects\\oWeapon\\oWeapon.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f99e48c2-b7f9-4d6f-998c-5e1dbaef3e4a",
+            "Value": {
+                "id": "68fdfb18-05b5-4239-88ca-85aaa1e5f00a",
+                "resourcePath": "scripts\\FireWeapon\\FireWeapon.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fe4c1985-3a44-47e3-b60b-81527d8d004e",
             "Value": {
                 "id": "a453c39c-9ea0-44b7-bcec-07f871dde9f9",
@@ -958,7 +1022,8 @@
         "58cd226a-4238-440e-976f-391c8924b0cb",
         "155d0ef9-f249-41b4-b78f-e12a0f12b9f9",
         "5f48e7e7-0312-416b-94e0-15814f8d9454",
-        "345e9682-1209-4e08-9964-6f862b94141e"
+        "345e9682-1209-4e08-9964-6f862b94141e",
+        "f99e48c2-b7f9-4d6f-998c-5e1dbaef3e4a"
     ],
     "tutorial": ""
 }

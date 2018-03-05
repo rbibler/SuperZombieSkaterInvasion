@@ -1,7 +1,7 @@
 script_execute(CheckVertImpulse);
 
 if(state == JUMPING || state == FALLING) {
-	if(shootNewPress) {
+	if(downNewPress) {
 		state = SLAMMING;
 	}
 } else if(state == SLAMMING) {

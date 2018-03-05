@@ -42,4 +42,8 @@ if(immune) {
 		lastImmunityFlashSwitch = frameCounter;
 	}
 }
+
+if(currentWeapon) {
+	FireWeapon(currentWeapon);
+}
 frameCounter++;

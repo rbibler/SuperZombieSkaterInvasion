@@ -61,6 +61,7 @@ if(state != RECOVERING) {
 movementReleased = leftPressed && rightPressed == 0;
 jumpReleased = !jumpPressed && lastInput[4];
 shootNewPress = shootPressed && !lastInput[5];
+downNewPress = downPressed && !lastInput[1];
 shootReleased = !shootPressed && lastInput[5];
 selectPressed = selectPressed && !lastInput[6];
 xDir = rightPressed - leftPressed;
