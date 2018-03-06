@@ -7,10 +7,8 @@
 //}
 if(!on_screen()) {
 	instance_destroy();
-	if(instance_exists(oWeaponSlingshot)) {
-		with(oWeaponSlingshot) {
-			ammoOnScreen--;
-		}
+	with(parentWeapon) {
+		ammoOnScreen--;
 	}
 }
 

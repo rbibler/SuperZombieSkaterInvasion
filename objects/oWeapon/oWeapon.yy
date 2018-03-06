@@ -157,6 +157,34 @@
             "value": "0",
             "varName": "ammoOnScreen",
             "varType": 0
+        },
+        {
+            "id": "e07fd140-83df-4c49-88d6-f4adc658655d",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "projXOffset",
+            "varType": 0
+        },
+        {
+            "id": "bda97154-50ec-4be0-b8af-911b7738d312",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "projYOffset",
+            "varType": 0
         }
     ],
     "solid": false,

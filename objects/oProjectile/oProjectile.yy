@@ -1,43 +1,43 @@
 {
-    "id": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",
+    "id": "a96c9a2b-7a97-420a-8af6-3adcdd583a3f",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oMoveableObject",
+    "name": "oProjectile",
     "eventList": [
         {
-            "id": "25c0bd0f-e0fc-4bf7-af02-439aec06fde9",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c"
-        },
-        {
-            "id": "209aec57-936f-4acf-ab00-0128db187583",
+            "id": "42c461ab-2540-45ac-b270-93c35e4a9eb3",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c"
+            "m_owner": "a96c9a2b-7a97-420a-8af6-3adcdd583a3f"
         },
         {
-            "id": "547e2882-60fd-4107-b5f5-512d72a4e747",
+            "id": "fb11511a-4ee0-45ee-9233-621a864d1ed1",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 2,
+            "enumb": 0,
             "eventtype": 3,
-            "m_owner": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c"
+            "m_owner": "a96c9a2b-7a97-420a-8af6-3adcdd583a3f"
+        },
+        {
+            "id": "214e25d3-f55b-464f-8ce7-c07eef811135",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 77,
+            "eventtype": 8,
+            "m_owner": "a96c9a2b-7a97-420a-8af6-3adcdd583a3f"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "50cbbfbd-374b-4d71-b0b5-8d34cb861716",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -53,7 +53,7 @@
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "c62b6ec9-0f6a-4a3c-b387-8b17178e75a2",
+            "id": "481ed0c7-7bc4-4980-9c27-af5abbb060f5",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -62,12 +62,12 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "StandardHBGResponse",
-            "varName": "hbgColResponseScript",
-            "varType": 5
+            "value": "0",
+            "varName": "xDir",
+            "varType": 0
         },
         {
-            "id": "e0101776-959c-466b-a52e-6a273f4c77d3",
+            "id": "22b142b1-d5d2-400a-91a8-f2d2493fc798",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -76,12 +76,12 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "noone",
-            "varName": "takehitScript",
-            "varType": 5
+            "value": "0",
+            "varName": "xSpd",
+            "varType": 0
         },
         {
-            "id": "c6a3d37e-60e7-4ba4-ad9a-c9776200164a",
+            "id": "cdc3121a-a79e-438d-9995-8ace8901796b",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -90,8 +90,8 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "100",
-            "varName": "currentHealth",
+            "value": "0",
+            "varName": "hitPoints",
             "varType": 0
         }
     ],

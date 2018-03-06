@@ -44,6 +44,22 @@
             "objectId": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",
             "propertyId": "c62b6ec9-0f6a-4a3c-b387-8b17178e75a2",
             "value": "SylvesterSlimeHBGColResponseScript"
+        },
+        {
+            "id": "afaa384b-814c-4365-9e69-c202ff676a07",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",
+            "propertyId": "e0101776-959c-466b-a52e-6a273f4c77d3",
+            "value": "SylvesterTakesAHit"
+        },
+        {
+            "id": "a630b3ff-5076-4c57-a168-ba1131ce6691",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",
+            "propertyId": "c6a3d37e-60e7-4ba4-ad9a-c9776200164a",
+            "value": "5"
         }
     ],
     "parentObjectId": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",

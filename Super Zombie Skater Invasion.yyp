@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "0fe273e1-ab80-4fb5-bdf4-9d3c9ed6a879",
+            "Value": {
+                "id": "213734de-192f-4529-993f-f2b52aa50eb9",
+                "resourcePath": "objects\\oProjBullet\\oProjBullet.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "11763274-801e-4add-8401-bacb682410cb",
             "Value": {
                 "id": "57531ce3-d381-4cf6-afbd-7b2b1af5d03f",
@@ -194,7 +202,7 @@
             "Key": "37d6c2ad-5ee2-4afa-8a29-d0e213bd8563",
             "Value": {
                 "id": "6fcd0278-4d08-4ba8-b97d-84dc693b4f41",
-                "resourcePath": "sprites\\sProjRock\\sProjRock.yy",
+                "resourcePath": "sprites\\sProjBullet\\sProjBullet.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -567,6 +575,14 @@
             }
         },
         {
+            "Key": "8c7221e1-3f11-42e2-97e6-c072a731e73f",
+            "Value": {
+                "id": "38cfb106-4c5a-42bb-8e7d-a2aafae8d95f",
+                "resourcePath": "scripts\\SylvesterTakesAHit\\SylvesterTakesAHit.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8d9771f9-9202-46b0-9e50-157fa515ed74",
             "Value": {
                 "id": "bede2123-8165-4a53-9d99-0f4a7d8c0bce",
@@ -615,6 +631,14 @@
             }
         },
         {
+            "Key": "98523a7d-5d85-46bb-b136-d66880ab1006",
+            "Value": {
+                "id": "04231665-f822-404a-be96-3431069be404",
+                "resourcePath": "sprites\\sProjRock\\sProjRock.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9c8bb54a-df86-4e83-a2ef-bb2c1b7fdab0",
             "Value": {
                 "id": "85593d0e-e970-4359-a423-02d53b52bf5e",
@@ -652,6 +676,14 @@
                 "id": "6c9d57b3-dddd-412b-a075-b2b80eb20532",
                 "resourcePath": "sprites\\sTeleporter\\sTeleporter.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a96c9a2b-7a97-420a-8af6-3adcdd583a3f",
+            "Value": {
+                "id": "b61bb3c7-6402-4956-b58b-bc98592d2a0b",
+                "resourcePath": "objects\\oProjectile\\oProjectile.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1002,6 +1034,7 @@
         "4f8f93c0-a93a-4957-8f10-4d57f8efb2cc",
         "5ae5d117-5105-4642-813b-80c7ea05a082",
         "abde01dc-1bb5-4a1a-b8b4-dd518c5779ee",
+        "8c7221e1-3f11-42e2-97e6-c072a731e73f",
         "86626fbd-c685-4e6f-b16a-a13565ac7541",
         "c1d37467-347e-4a23-8bb6-acd6b1187aaa",
         "91b0107a-a3a4-405f-b864-3a87df7aa9cc",

@@ -12,7 +12,9 @@
         "ae90a4f3-66f1-4716-a012-983be7591d2f",
         "bd7c759e-fc30-4887-a128-c9ed2d640557",
         "6330b6ab-1b87-4cde-91f6-ff06753b4af5",
-        "f94dfb01-eb41-4ff5-bc0b-b14578b58a4b"
+        "f94dfb01-eb41-4ff5-bc0b-b14578b58a4b",
+        "a96c9a2b-7a97-420a-8af6-3adcdd583a3f",
+        "0fe273e1-ab80-4fb5-bdf4-9d3c9ed6a879"
     ],
     "filterType": "GMObject",
     "folderName": "WeaponObjects",
