@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "293ce318-092e-4004-8ccc-75fda609d8ca",
+            "Value": {
+                "id": "131fbd55-5880-43a4-b095-dc7ab0a1b034",
+                "resourcePath": "scripts\\SylvesterGetsSmacked\\SylvesterGetsSmacked.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2dca43b8-d3b5-4d71-8b17-f3a943220d2b",
             "Value": {
                 "id": "1751c9a5-de74-4a81-9ba2-5262d5d12be9",
@@ -543,6 +551,14 @@
             }
         },
         {
+            "Key": "7f02adcc-2f3b-4f0d-a4d7-f863d9437c56",
+            "Value": {
+                "id": "65e96150-1d37-4d5f-87c4-7ae2c3b38299",
+                "resourcePath": "sprites\\sBoardSwing\\sBoardSwing.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "860bda6a-2d9e-4734-8d2c-bb58dbc7d4d8",
             "Value": {
                 "id": "d6be82da-000b-4a5b-8b1d-290649031e9b",
@@ -619,6 +635,14 @@
             "Value": {
                 "id": "548feb17-cc03-4b5d-bbf5-cd53e364fb0d",
                 "resourcePath": "objects\\oProjRock\\oProjRock.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "92a7a158-c715-47a1-bc49-7369a9a9359a",
+            "Value": {
+                "id": "961189b2-0ee8-4ea3-94b9-44bab00b0a2c",
+                "resourcePath": "objects\\oProjBoardSwing\\oProjBoardSwing.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1035,6 +1059,7 @@
         "5ae5d117-5105-4642-813b-80c7ea05a082",
         "abde01dc-1bb5-4a1a-b8b4-dd518c5779ee",
         "8c7221e1-3f11-42e2-97e6-c072a731e73f",
+        "293ce318-092e-4004-8ccc-75fda609d8ca",
         "86626fbd-c685-4e6f-b16a-a13565ac7541",
         "c1d37467-347e-4a23-8bb6-acd6b1187aaa",
         "91b0107a-a3a4-405f-b864-3a87df7aa9cc",

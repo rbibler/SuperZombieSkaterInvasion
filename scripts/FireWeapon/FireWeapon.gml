@@ -4,7 +4,7 @@
 var weapon = argument0;
 if(weapon.weaponActive && weapon.weaponCool) {
 	if(shootNewPress) {
-		if(weapon.ammoOnScreen < weapon.maxAmmoOnScreen) {
+		if((weapon.ammoOnScreen < weapon.maxAmmoOnScreen) || (weapon.maxAmmoOnScreen == -1)) {
 			var proj = instance_create_layer(x + weapon.projXOffset, y + weapon.projYOffset, "ProjectileLayer", weapon.projectile);
 			proj.parentWeapon = weapon;
 			proj.xDir = xDir;

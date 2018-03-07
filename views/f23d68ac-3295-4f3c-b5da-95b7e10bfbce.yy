@@ -8,7 +8,8 @@
         "4f8f93c0-a93a-4957-8f10-4d57f8efb2cc",
         "5ae5d117-5105-4642-813b-80c7ea05a082",
         "abde01dc-1bb5-4a1a-b8b4-dd518c5779ee",
-        "8c7221e1-3f11-42e2-97e6-c072a731e73f"
+        "8c7221e1-3f11-42e2-97e6-c072a731e73f",
+        "293ce318-092e-4004-8ccc-75fda609d8ca"
     ],
     "filterType": "GMScript",
     "folderName": "SylvesterSlimeScripts",

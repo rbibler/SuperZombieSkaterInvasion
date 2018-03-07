@@ -60,6 +60,14 @@
             "objectId": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",
             "propertyId": "c6a3d37e-60e7-4ba4-ad9a-c9776200164a",
             "value": "5"
+        },
+        {
+            "id": "f11cf4a6-8990-4f6b-8909-e46b24536472",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",
+            "propertyId": "c4a8e8cd-fde9-476d-b819-84baf8618fbb",
+            "value": "SylvesterGetsSmacked"
         }
     ],
     "parentObjectId": "eadee58b-7c7e-47dc-b5e5-275134d5ec6c",

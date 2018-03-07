@@ -8,6 +8,7 @@ event_inherited();
 CHOMPING = 4;
 SWALLOWING = 5;
 EXPLODING = 6;
+SYLVESTER_FLYING = 7;
 
 
 chompFrames = 10;
@@ -56,6 +57,22 @@ fall_values[13] = .75;
 fall_values[14] = .75;
 fall_values[15] = 1;
 fall_values[16] = 1;
+
+
+fly_values[0] = -5;
+fly_values[1] = -5;
+fly_values[2] = -4;
+fly_values[3] = -4;
+fly_values[4] = -3;
+fly_values[5] = -3;
+fly_values[6] = -2;
+fly_values[7] = -2;
+fly_values[8] = -1;
+fly_values[9] = -1;
+flyValuesMax = array_length_1d(fly_values);
+flyTimer = 0;
+
+
 
 
 jumpTimerMax = array_length_1d(jump_heights);

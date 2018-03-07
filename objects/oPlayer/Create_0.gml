@@ -133,7 +133,7 @@ infectionTime = 0;
 infectionVirulence = 0;
 lastEpisodeTime = 0;
 
-currentWeapon = instance_create_layer(0,0,"WeaponLayer", oWeaponPistol);
+currentWeapon = instance_create_layer(0,0,"WeaponLayer", oWeaponBoardSwing);
 with(currentWeapon) {
 	weaponActive = 1;
 	currentAmmo = 20;

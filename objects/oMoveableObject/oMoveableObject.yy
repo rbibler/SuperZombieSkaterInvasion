@@ -93,6 +93,20 @@
             "value": "100",
             "varName": "currentHealth",
             "varType": 0
+        },
+        {
+            "id": "c4a8e8cd-fde9-476d-b819-84baf8618fbb",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "noone",
+            "varName": "takeMeleeHitScript",
+            "varType": 5
         }
     ],
     "solid": false,
